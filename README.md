@@ -1,0 +1,2 @@
+# lovecode
+lovecode.my.id
