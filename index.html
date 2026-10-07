@@ -24,7 +24,8 @@ body{background:linear-gradient(180deg,#E9D8F0 0%,#F7E8EF 60%,#FBF1F3 100%);marg
 .lc{--ink:#251630;--ink2:#43344F;--ink3:#665673;--sf:#FBF5F7;--card:#fff;--gold:#C93A64;--goldh:#AE2D52;--goldt:#A92B52;--goldm:#F29AB6;--goldp:#FDEEF3;--goldl:rgba(201,58,100,.26);--rose:#6B46A8;--rosep:#F3EEFA;--teal:#17614F;--tealp:#E5F3EE;--red:#B52A2A;--redp:#FDF1F1;--amber:#C9741B;--amberp:#FFF4E5;--bd:rgba(37,22,48,.09);--bd2:rgba(37,22,48,.16);--plum:#2F1148;--plum2:#3F2160;--lilac:#E3D3F0;--sun:#FFC15E;--fd:'Fraunces',Georgia,'Times New Roman',serif;--fb:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;font-family:var(--fb);color:var(--ink);width:100%;display:flex;justify-content:center;font-size:14.5px;line-height:1.65}
 .lc *{box-sizing:border-box;margin:0;padding:0}
 
-.shell{width:100%;max-width:520px;background:var(--card);border-radius:28px;border:1px solid var(--bd);overflow:hidden;box-shadow:0 24px 60px rgba(47,17,72,.2)}
+/* DIUBAH: max-width dari 520px menjadi 440px agar sama persis dengan prayer.my.id */
+.shell{width:100%;max-width:440px;background:var(--card);border-radius:28px;border:1px solid var(--bd);overflow:hidden;box-shadow:0 24px 60px rgba(47,17,72,.2)}
 .pt{height:4px;background:var(--bd)}.pf{height:100%;background:linear-gradient(90deg,var(--rose),var(--gold));transition:width .6s}
 
 /* ===== HERO ===== */
@@ -58,7 +59,7 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,a:focus-visible,
 .pvwrap{position:relative;z-index:2;margin-top:-58px;padding:0 20px}
 .pvwrap .sum{box-shadow:0 22px 48px rgba(47,17,72,.28);border-color:rgba(201,58,100,.3);text-align:center}
 .pvwrap .sum .br{text-align:left}
-.pvwrap .sum .lock{text-align:center} /* DIUBAH: Center align untuk teks lock */
+.pvwrap .sum .lock{text-align:center} /* Center align untuk teks lock */
 
 /* ===== PANEL CHAT ===== */
 .chs{opacity:0;max-height:0;overflow:hidden;padding:0 20px;transition:opacity .5s,max-height .6s,padding .4s}
@@ -169,17 +170,28 @@ textarea.fi{resize:none;min-height:64px}.fi:focus-visible{outline:none;border-co
 .faq details p{padding:0 15px 15px;font-size:13.5px;color:var(--ink3)}
 
 .fin{background:linear-gradient(165deg,#34124F 0%,#6E2166 55%,#B3305F 100%);color:#fff;text-align:center;padding:42px 22px}
-.fin .st{color:#fff}.fin .ss{color:var(--lilac);margin-bottom:24px} /* DIUBAH: Jarak napas sebelum tombol */
+.fin .st{color:#fff}.fin .ss{color:var(--lilac);margin-bottom:24px} /* Jarak napas sebelum tombol */
 .fin .btn{background:linear-gradient(135deg,#FFD570 0%,#FFC15E 100%);color:var(--plum);box-shadow:0 12px 30px rgba(20,5,35,.35);font-weight:800}.fin .btn:hover{background:linear-gradient(135deg,#FFDD87 0%,#FFB23A 100%)}
 .fin :focus-visible{outline-color:#fff}
 .legal{font-size:11px;color:#7A6B87;line-height:1.6;text-align:center;padding:22px 20px 70px}
 
 /* ===== TOMBOL MELAYANG ===== */
 .stk{position:fixed;left:0;right:0;bottom:0;z-index:9999;padding:11px 14px calc(11px + env(safe-area-inset-bottom,0px));background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-top:1px solid var(--bd);transform:translateY(110%);visibility:hidden;transition:transform .35s,visibility 0s .35s}
-.stk.show{transform:none;visibility:visible;transition-delay:0s}.stk .btn{max-width:472px;margin:0 auto;padding:13px 18px;font-size:14px;background:linear-gradient(135deg,#FFD570 0%,#FFC15E 100%);color:var(--plum);font-weight:800;box-shadow:0 8px 20px rgba(20,5,35,.25)}
+.stk.show{transform:none;visibility:visible;transition-delay:0s}
+/* DIUBAH: max-width dari 472px menjadi 408px agar proporsional dengan shell 440px */
+.stk .btn{max-width:408px;margin:0 auto;padding:13px 18px;font-size:14px;background:linear-gradient(135deg,#FFD570 0%,#FFC15E 100%);color:var(--plum);font-weight:800;box-shadow:0 8px 20px rgba(20,5,35,.25)}
 .stk .btn:hover{background:linear-gradient(135deg,#FFDD87 0%,#FFB23A 100%)}
 
-@media(max-width:520px){body{padding:0;background:var(--plum)}.shell{border-radius:0;border-left:none;border-right:none;box-shadow:none}.hd{padding:14px 18px}.hero{padding:24px 18px 84px}.ht{font-size:26px}.band,.fin{padding-left:18px;padding-right:18px}.msgs{max-height:50vh;max-height:50dvh;padding:15px 13px}}
+@media(max-width:520px){
+  body{padding:0;background:var(--plum)}
+  /* DIUBAH: Menambahkan max-width:100% agar perilaku mobile identik dengan prayer.my.id */
+  .shell{border-radius:0;border-left:none;border-right:none;box-shadow:none;max-width:100%}
+  .hd{padding:14px 18px}
+  .hero{padding:24px 18px 84px}
+  .ht{font-size:26px}
+  .band,.fin{padding-left:18px;padding-right:18px}
+  .msgs{max-height:50vh;max-height:50dvh;padding:15px 13px}
+}
 @media(prefers-reduced-motion:reduce){.chs,.pf{transition:none}.typ span{animation:none;opacity:.6}.msgs{scroll-behavior:auto}}
 </style>
 </head>
@@ -192,7 +204,7 @@ textarea.fi{resize:none;min-height:64px}.fi:focus-visible{outline:none;border-co
 <div class="pt"><div class="pf" style="width:100%"></div></div>
 <div class="hd"><div class="logo">Life<i>Code</i></div><div class="logo-s">LOVECode 💗</div></div>
 <div class="hero">
-<!-- SVG RINGS DIHAPUS SESUAI PERMINTAAN -->
+<!-- SVG RINGS DIHAPUS -->
 <div class="eb">💗 Tes gratis · 10 pertanyaan · ± 4 menit</div>
 <h1 class="ht">Kenali pola emosionalmu dalam hubungan.</h1>
 <p class="hdsc">Kenali <strong>pola emosional, cara menghadapi konflik, dan kebutuhan cintamu</strong>. Bukan menebak pikiran pasangan, tapi memahami pola yang muncul ketika kamu mencintai, kecewa, dan merasa tidak aman.</p>
