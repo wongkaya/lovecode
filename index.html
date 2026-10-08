@@ -24,7 +24,6 @@ body{background:linear-gradient(180deg,#E9D8F0 0%,#F7E8EF 60%,#FBF1F3 100%);marg
 .lc{--ink:#251630;--ink2:#43344F;--ink3:#665673;--sf:#FBF5F7;--card:#fff;--gold:#C93A64;--goldh:#AE2D52;--goldt:#A92B52;--goldm:#F29AB6;--goldp:#FDEEF3;--goldl:rgba(201,58,100,.26);--rose:#6B46A8;--rosep:#F3EEFA;--teal:#17614F;--tealp:#E5F3EE;--red:#B52A2A;--redp:#FDF1F1;--amber:#C9741B;--amberp:#FFF4E5;--bd:rgba(37,22,48,.09);--bd2:rgba(37,22,48,.16);--plum:#2F1148;--plum2:#3F2160;--lilac:#E3D3F0;--sun:#FFC15E;--fd:'Fraunces',Georgia,'Times New Roman',serif;--fb:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;font-family:var(--fb);color:var(--ink);width:100%;display:flex;justify-content:center;font-size:14.5px;line-height:1.65}
 .lc *{box-sizing:border-box;margin:0;padding:0}
 
-/* DIUBAH: max-width dari 520px menjadi 440px agar sama persis dengan prayer.my.id */
 .shell{width:100%;max-width:440px;background:var(--card);border-radius:28px;border:1px solid var(--bd);overflow:hidden;box-shadow:0 24px 60px rgba(47,17,72,.2)}
 .pt{height:4px;background:var(--bd)}.pf{height:100%;background:linear-gradient(90deg,var(--rose),var(--gold));transition:width .6s}
 
@@ -42,6 +41,7 @@ body{background:linear-gradient(180deg,#E9D8F0 0%,#F7E8EF 60%,#FBF1F3 100%);marg
 .trust{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:18px}
 .trust span{font-size:11.5px;font-weight:600;color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);padding:5px 11px;border-radius:999px}
 .top .note{color:#E9D9F2}
+.top .note a{color:var(--sun);font-weight:600}
 .top :focus-visible{outline-color:#fff}
 
 /* ===== TOMBOL ===== */
@@ -59,7 +59,7 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,a:focus-visible,
 .pvwrap{position:relative;z-index:2;margin-top:-58px;padding:0 20px}
 .pvwrap .sum{box-shadow:0 22px 48px rgba(47,17,72,.28);border-color:rgba(201,58,100,.3);text-align:center}
 .pvwrap .sum .br{text-align:left}
-.pvwrap .sum .lock{text-align:center} /* Center align untuk teks lock */
+.pvwrap .sum .lock{text-align:center}
 
 /* ===== PANEL CHAT ===== */
 .chs{opacity:0;max-height:0;overflow:hidden;padding:0 20px;transition:opacity .5s,max-height .6s,padding .4s}
@@ -111,6 +111,7 @@ textarea.fi{resize:none;min-height:64px}.fi:focus-visible{outline:none;border-co
 .rr label{display:flex;align-items:center;justify-content:center;gap:7px;padding:12px 9px;border:1.5px solid var(--bd2);border-radius:11px;background:var(--sf);cursor:pointer;font-size:13.5px;min-height:46px}
 .rr input,.ag input{accent-color:var(--gold);width:17px;height:17px}.rr label:has(input:checked){border-color:var(--gold);background:var(--goldp)}
 .ag{display:flex;gap:10px;align-items:flex-start;background:var(--sf);border:1px solid var(--bd2);border-radius:11px;padding:12px;cursor:pointer;font-size:12.5px;color:var(--ink2)}.ag input{margin-top:2px;flex-shrink:0}
+.ag a{color:var(--goldt);font-weight:700}
 .err{display:none;background:var(--redp);color:var(--red);border:1px solid rgba(181,42,42,.2);border-radius:10px;padding:9px 11px;font-size:13px;margin-top:12px}.err.on{display:block}
 .snd{display:none;margin-top:13px}.snd.on{display:flex}
 .done{text-align:center}.dc{width:56px;height:56px;background:var(--tealp);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;color:var(--teal);font-size:26px}
@@ -168,23 +169,28 @@ textarea.fi{resize:none;min-height:64px}.fi:focus-visible{outline:none;border-co
 .faq summary::after{content:'+';font-size:20px;line-height:1;color:var(--gold);font-weight:600;flex-shrink:0}
 .faq details[open] summary::after{content:'\2212'}
 .faq details p{padding:0 15px 15px;font-size:13.5px;color:var(--ink3)}
+.faq details p a{color:var(--goldt);font-weight:700}
 
 .fin{background:linear-gradient(165deg,#34124F 0%,#6E2166 55%,#B3305F 100%);color:#fff;text-align:center;padding:42px 22px}
-.fin .st{color:#fff}.fin .ss{color:var(--lilac);margin-bottom:24px} /* Jarak napas sebelum tombol */
+.fin .st{color:#fff}.fin .ss{color:var(--lilac);margin-bottom:24px}
 .fin .btn{background:linear-gradient(135deg,#FFD570 0%,#FFC15E 100%);color:var(--plum);box-shadow:0 12px 30px rgba(20,5,35,.35);font-weight:800}.fin .btn:hover{background:linear-gradient(135deg,#FFDD87 0%,#FFB23A 100%)}
 .fin :focus-visible{outline-color:#fff}
-.legal{font-size:11px;color:#7A6B87;line-height:1.6;text-align:center;padding:22px 20px 70px}
+
+/* ===== MENU FOOTER & LEGAL ===== */
+.foot-nav{display:flex;flex-wrap:wrap;gap:6px 16px;justify-content:center;padding:22px 20px 0}
+.foot-nav a{font-size:12.5px;font-weight:600;color:var(--goldt);text-decoration:none;padding:4px 2px}
+.foot-nav a:hover{text-decoration:underline}
+.legal{font-size:11px;color:#7A6B87;line-height:1.6;text-align:center;padding:14px 20px 70px}
+.legal a{color:var(--goldt);font-weight:600}
 
 /* ===== TOMBOL MELAYANG ===== */
 .stk{position:fixed;left:0;right:0;bottom:0;z-index:9999;padding:11px 14px calc(11px + env(safe-area-inset-bottom,0px));background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-top:1px solid var(--bd);transform:translateY(110%);visibility:hidden;transition:transform .35s,visibility 0s .35s}
 .stk.show{transform:none;visibility:visible;transition-delay:0s}
-/* DIUBAH: max-width dari 472px menjadi 408px agar proporsional dengan shell 440px */
 .stk .btn{max-width:408px;margin:0 auto;padding:13px 18px;font-size:14px;background:linear-gradient(135deg,#FFD570 0%,#FFC15E 100%);color:var(--plum);font-weight:800;box-shadow:0 8px 20px rgba(20,5,35,.25)}
 .stk .btn:hover{background:linear-gradient(135deg,#FFDD87 0%,#FFB23A 100%)}
 
 @media(max-width:520px){
   body{padding:0;background:var(--plum)}
-  /* DIUBAH: Menambahkan max-width:100% agar perilaku mobile identik dengan prayer.my.id */
   .shell{border-radius:0;border-left:none;border-right:none;box-shadow:none;max-width:100%}
   .hd{padding:14px 18px}
   .hero{padding:24px 18px 84px}
@@ -204,13 +210,12 @@ textarea.fi{resize:none;min-height:64px}.fi:focus-visible{outline:none;border-co
 <div class="pt"><div class="pf" style="width:100%"></div></div>
 <div class="hd"><div class="logo">Life<i>Code</i></div><div class="logo-s">LOVECode 💗</div></div>
 <div class="hero">
-<!-- SVG RINGS DIHAPUS -->
 <div class="eb">💗 Tes gratis · 10 pertanyaan · ± 4 menit</div>
 <h1 class="ht">Kenali pola emosionalmu dalam hubungan.</h1>
 <p class="hdsc">Kenali <strong>pola emosional, cara menghadapi konflik, dan kebutuhan cintamu</strong>. Bukan menebak pikiran pasangan, tapi memahami pola yang muncul ketika kamu mencintai, kecewa, dan merasa tidak aman.</p>
 <button id="start" class="btn hcta" type="button" onclick="LC.open()">✨ Mulai LOVECode Test</button>
-<p class="note">Gratis, tanpa daftar akun, jawaban bersifat rahasia.<br>Alat refleksi diri, bukan diagnosis atau pengganti konselor.</p>
-<div class="trust"><span>✓ 100% Gratis</span><span>🔒 Rahasia</span><span>Hasil langsung</span></div>
+<p class="note">Gratis, tanpa daftar akun. Jawabanmu baru dikirim jika kamu menyetujuinya di akhir.<br>Alat refleksi diri, bukan diagnosis atau pengganti konselor. <a href="privasi.html">Kebijakan Privasi</a></p>
+<div class="trust"><span>✓ 100% Gratis</span><span>🔒 Atas persetujuanmu</span><span>Hasil langsung</span></div>
 </div>
 </div>
 
@@ -285,15 +290,23 @@ textarea.fi{resize:none;min-height:64px}.fi:focus-visible{outline:none;border-co
 <details><summary>Apakah ini diagnosis psikologis?</summary><p>Bukan. Hasil menggambarkan kecenderungan saat ini, bersifat edukatif dan reflektif, dan bukan penentu apakah kamu harus bertahan atau berpisah.</p></details>
 <details><summary>Berapa lama tesnya?</summary><p>Sekitar 4 menit: beberapa pertanyaan pembuka, lalu 10 pernyataan singkat dengan lima pilihan jawaban.</p></details>
 <details><summary>Siapa yang bisa ikut?</summary><p>Pengguna usia 17 tahun ke atas yang sedang menikah atau berada dalam hubungan.</p></details>
+<details><summary>Bagaimana data saya dipakai?</summary><p>Selama tes, jawabanmu diproses di perangkatmu. Data baru dikirim kalau kamu mengisi formulir laporan dan menyetujuinya. Penjelasan lengkapnya ada di <a href="privasi.html">Kebijakan Privasi</a>.</p></details>
 </section>
 
 <section class="fin">
 <h2 class="st">Hasilnya langsung muncul di layar.</h2>
-<p class="ss">Gratis, rahasia, dan tidak sampai 5 menit.</p>
+<p class="ss">Gratis, tanpa daftar akun, dan tidak sampai 5 menit.</p>
 <button class="btn" type="button" onclick="LC.open()">✨ Mulai LOVECode Test</button>
 </section>
 
-<div class="legal"><strong>Disclaimer:</strong> Lovecode adalah bagian dari lifecode.my.id, platform edukasi refleksi diri. Hasil menggambarkan kecenderungan saat ini, bersifat edukatif dan reflektif, bukan diagnosis psikologis atau medis, dan bukan penentu apakah kamu harus bertahan atau berpisah. Jika mengalami tekanan emosional berat atau krisis, hubungi profesional berlisensi atau layanan kesehatan jiwa 119 ext. 8.</div>
+<nav class="foot-nav" aria-label="Menu halaman">
+<a href="tentang.html">Tentang</a>
+<a href="privasi.html">Privasi</a>
+<a href="syarat.html">Syarat</a>
+<a href="kontak.html">Kontak</a>
+</nav>
+
+<div class="legal"><strong>Disclaimer:</strong> Lovecode adalah bagian dari lifecode.my.id, platform edukasi refleksi diri. Hasil menggambarkan kecenderungan saat ini, bersifat edukatif dan reflektif, bukan diagnosis psikologis atau medis, dan bukan penentu apakah kamu harus bertahan atau berpisah. Jika mengalami tekanan emosional berat atau krisis, hubungi profesional berlisensi atau layanan kesehatan jiwa 119 ext. 8.<br><br>Halaman ini memakai Facebook Pixel untuk mengukur iklan (lihat <a href="privasi.html">Kebijakan Privasi</a>).</div>
 </div></div>
 
 <script>
@@ -428,9 +441,9 @@ setTimeout(function(){
 const h='<div class="rep" id="rep"><h4>🎁 Laporan Gratis Profil Emosional</h4><p>Isi data berikut, centang persetujuan, lalu kirim. Laporan dikirim ke WhatsApp-mu <strong>setelah kamu mengklik tombol konfirmasi</strong>.</p>'+
 '<div class="rf"><span class="rl">Jenis Kelamin *</span><div class="rr"><label><input type="radio" name="lc-g" value="Male"> Laki-laki</label><label><input type="radio" name="lc-g" value="Female"> Perempuan</label></div></div>'+
 '<div class="rf"><label class="rl" for="wa">Nomor WhatsApp Aktif *</label><input type="tel" id="wa" class="fi" inputmode="tel" placeholder="Contoh: 0812XXXXXXXX"></div>'+
-'<label class="ag" for="agree"><input type="checkbox" id="agree"><span>Ya, saya bersedia menerima laporan gratis lewat WhatsApp, dan setuju nama, gender, tanggal lahir saya dan pasangan, tanggal mulai hubungan, nomor WhatsApp, serta ringkasan jawaban dikirim ke LifeCode untuk menyusun laporan. Saya sudah memberi tahu atau berhak membagikan data pasangan saya.</span></label>'+
+'<label class="ag" for="agree"><input type="checkbox" id="agree"><span>Ya, saya bersedia menerima laporan gratis lewat WhatsApp, dan setuju nama, gender, tanggal lahir saya dan pasangan, tanggal mulai hubungan, nomor WhatsApp, serta ringkasan jawaban dikirim ke LifeCode untuk menyusun laporan. Saya sudah memberi tahu atau berhak membagikan data pasangan saya. Saya telah membaca <a href="privasi.html" target="_blank" rel="noopener">Kebijakan Privasi</a> dan <a href="syarat.html" target="_blank" rel="noopener">Syarat Penggunaan</a>.</span></label>'+
 '<div class="err" id="err" role="alert"></div><button type="button" class="btn gold snd" id="snd">Simpan Data &amp; Lanjut ke WhatsApp</button>'+
-'<div class="legal" style="margin:14px 0 0">Laporan bersifat edukatif dan reflektif, bukan diagnosis.</div></div>';
+'<div class="legal" style="margin:14px 0 0;padding:0">Laporan bersifat edukatif dan reflektif, bukan diagnosis.</div></div>';
 bot(h,'wide');prog(98);const c=clr();if(c)c.innerHTML='<p class="cn">Belum siap? Boleh tutup chat ini. Jawabanmu tidak dikirim tanpa persetujuan. 🌿</p>';
 const ag=$('agree'),sd=$('snd');ag.addEventListener('change',function(){sd.classList.toggle('on',ag.checked);if(ag.checked)setTimeout(function(){sd.scrollIntoView({behavior:'smooth',block:'nearest'})},120)});sd.addEventListener('click',submit)},700)})}
 function rerr(m){const e=$('err');if(!e)return;e.textContent=m||'';e.classList.toggle('on',!!m)}
