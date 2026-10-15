@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#3B1457">
 <title>LOVECode: Emotional Relationship Test Gratis</title>
 <meta property="og:title" content="Kenali pola emosionalmu dalam hubungan. Tes gratis LOVECode">
-<meta property="og:description" content="Tes gratis 4 menit: kenali pola emosional, cara menghadapi konflik, dan kebutuhan cintamu dalam hubungan. Hasil instant + Via WhatsApp.">
+<meta property="og:description" content="Tes gratis 4 menit: kenali pola emosional, cara menghadapi konflik, dan kebutuhan cintamu dalam hubungan. Hasil langsung + laporan WhatsApp.">
 <meta property="og:type" content="website">
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
@@ -17,301 +17,384 @@ fbq('init','1078060171077411');fbq('track','PageView');
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{box-sizing:border-box;color-scheme:light}
-html{-webkit-text-size-adjust:100%}
-body{background:linear-gradient(180deg,#E9D8F0 0%,#F7E8EF 60%,#FBF1F3 100%);margin:0;padding:24px 16px;min-height:100vh;-webkit-tap-highlight-color:transparent}
+:root{
+  color-scheme:light;
+  --paper:#FBF1F3;--white:#FFFFFF;
+  --ink:#251630;--ink2:#43344F;--ink3:#665673;
+  --green:#A92B52;--green-deep:#2F1148;--green-soft:#FDEEF3;
+  --coral:#FFC15E;--coral-soft:#FFF1D6;--coral-ink:#9A5B00;
+  --line:rgba(37,22,48,.16);
+  --err:#B3261E;--err-bg:#FDECEA;--warn-bg:#FFF2D6;
+  --fd:'Fraunces',Georgia,'Times New Roman',serif;
+  --fb:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+  --gl:max(20px,env(safe-area-inset-left,0px));
+  --gr:max(20px,env(safe-area-inset-right,0px));
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;padding:24px 16px;background:var(--green-deep);color:var(--ink);font-family:var(--fb);font-size:16px;line-height:1.6;-webkit-text-size-adjust:100%}
+h1,h2,h3,h4,p{margin:0}
+a{color:var(--green);font-weight:700}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--coral);outline-offset:3px}
+.shell{max-width:460px;margin:0 auto;background:var(--paper);border-radius:26px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.45);position:relative}
+.wrap{padding-left:var(--gl);padding-right:var(--gr)}
+.ctr{text-align:center}
+.ctr .ticket,.ctr .checks,.ctr .chk,.ctr .prev,.ctr .steps3{text-align:left}
+.ctr .venn svg{margin:0 auto}
+.ctr .facts div{padding:12px 4px;text-align:center}
+.kick{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green);margin-bottom:10px}
+.hero .kick{display:inline-block;background:var(--green-soft);color:var(--green-deep);padding:6px 16px;border-radius:999px;font-size:12.5px;letter-spacing:.06em;margin-bottom:18px;line-height:1.4}
 
-.lc{--ink:#251630;--ink2:#43344F;--ink3:#665673;--sf:#FBF5F7;--card:#fff;--gold:#C93A64;--goldh:#AE2D52;--goldt:#A92B52;--goldm:#F29AB6;--goldp:#FDEEF3;--goldl:rgba(201,58,100,.26);--rose:#6B46A8;--rosep:#F3EEFA;--teal:#17614F;--tealp:#E5F3EE;--red:#B52A2A;--redp:#FDF1F1;--amber:#C9741B;--amberp:#FFF4E5;--bd:rgba(37,22,48,.09);--bd2:rgba(37,22,48,.16);--plum:#2F1148;--plum2:#3F2160;--lilac:#E3D3F0;--sun:#FFC15E;--fd:'Fraunces',Georgia,'Times New Roman',serif;--fb:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;font-family:var(--fb);color:var(--ink);width:100%;display:flex;justify-content:center;font-size:14.5px;line-height:1.65}
-.lc *{box-sizing:border-box;margin:0;padding:0}
+.btn{display:flex;align-items:center;justify-content:space-between;gap:14px;width:100%;min-height:56px;padding:8px 8px 8px 24px;background:var(--ink);color:var(--paper);border:0;border-radius:999px;font-weight:700;font-size:16px;cursor:pointer;text-decoration:none;text-align:left;transition:transform .15s,background .2s}
+.btn .ar{flex-shrink:0;width:40px;height:40px;border-radius:50%;background:var(--coral);color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:20px;line-height:1;transition:transform .2s}
+.btn:hover .ar{transform:translateX(3px)}.btn:active{transform:translateY(1px)}
+.btn.coral{background:var(--coral);color:var(--ink)}.btn.coral .ar{background:var(--ink);color:var(--paper)}
+.btn.plain{justify-content:center;padding:0 22px;min-height:50px}
+.btn:disabled{opacity:.6;cursor:not-allowed}
 
-.shell{width:100%;max-width:440px;background:var(--card);border-radius:28px;border:1px solid var(--bd);overflow:hidden;box-shadow:0 24px 60px rgba(47,17,72,.2)}
-.pt{height:4px;background:var(--bd)}.pf{height:100%;background:linear-gradient(90deg,var(--rose),var(--gold));transition:width .6s}
+.top{display:flex;align-items:center;justify-content:center;gap:12px;padding-block:18px}
+.tagd{font-family:var(--fd);font-size:14px;font-weight:600;letter-spacing:-.01em;border:1.5px solid var(--ink);border-radius:999px;padding:3px 12px;line-height:1.1}
 
-/* ===== HERO ===== */
-.top{background:linear-gradient(165deg,#34124F 0%,#6E2166 52%,#B3305F 100%);color:#fff}
-.top .pt{background:rgba(255,255,255,.14)}
-.top .pf{background:var(--sun)}
-.hd{padding:16px 24px;display:flex;align-items:baseline;justify-content:space-between;gap:12px;border-bottom:1px solid rgba(255,255,255,.12)}
-.logo{font-family:var(--fd);font-size:22px;font-weight:700;color:#fff;letter-spacing:-.01em}.logo i{font-style:normal;color:var(--sun)}
-.logo-s{font-size:12px;font-weight:500;color:var(--lilac)}
-.hero{text-align:center;padding:28px 20px 86px}
-.eb{display:inline-block;font-size:12px;font-weight:700;color:var(--plum);background:var(--sun);padding:5px 13px;border-radius:999px;margin-bottom:16px}
-.ht{font-family:var(--fd);font-size:28px;font-weight:800;line-height:1.14;letter-spacing:-.02em;margin-bottom:12px;color:#fff;text-wrap:balance}
-.hdsc{font-size:14px;color:var(--lilac);line-height:1.65;margin-bottom:22px}.hdsc strong{color:#fff;font-weight:700}
-.trust{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:18px}
-.trust span{font-size:11.5px;font-weight:600;color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);padding:5px 11px;border-radius:999px}
-.top .note{color:#F3E8FA;font-size:12.5px}
-.top .note a{color:var(--sun);font-weight:600}
-.top :focus-visible{outline-color:#fff}
+.hero{background:linear-gradient(180deg,#F3E4F3 0%,var(--paper) 100%)}
+.hero .wrap{padding-block:6px 40px}
+.venn{margin:0 0 14px}
+.venn svg{display:block;width:100%;max-width:340px;height:auto}
+.venn text{font-family:var(--fd);font-weight:600;font-size:11px}
+.ht{font-family:var(--fd);font-weight:600;font-size:clamp(26px,7.6vw,32px);line-height:1.2;letter-spacing:-.02em;margin-bottom:14px;text-wrap:balance}
+.ht span{background:linear-gradient(transparent 62%,var(--coral) 62%,var(--coral) 92%,transparent 92%)}
+.lead{font-size:16.5px;color:var(--ink2);margin-bottom:22px}.lead strong{color:var(--ink)}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);margin-top:24px;border-block:1.5px solid var(--ink)}
+.facts div{padding:12px 4px 12px 0;border-right:1.5px solid var(--ink);padding-left:12px}
+.facts div:first-child{padding-left:0}.facts div:last-child{border-right:0}
+.facts b{display:block;font-family:var(--fd);font-weight:700;font-size:24px;line-height:1.1}
+.facts span{font-size:12.5px;color:var(--ink3);font-weight:600}
 
-/* ===== TOMBOL ===== */
-.btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:14px 20px;background:var(--ink);color:#fff;border:none;border-radius:12px;font-family:var(--fb);font-size:14.5px;font-weight:700;cursor:pointer;text-decoration:none;min-height:48px;transition:background .2s,transform .15s}
-.btn:hover{background:var(--ink2)}.btn:active{transform:translateY(1px)}
-.btn.gold{background:var(--gold)}.btn.gold:hover{background:var(--goldh)}.btn:disabled{background:#CFC6D8;cursor:not-allowed}
-.btn.bright{background:linear-gradient(135deg,#FF7AA8 0%,#C93A64 100%);color:#fff;box-shadow:0 10px 24px rgba(201,58,100,.45);font-size:15px}
-.btn.bright:hover{background:linear-gradient(135deg,#FF89B4 0%,#AE2D52 100%);color:#fff}
-.hcta{font-size:15.5px;padding:17px 22px;background:linear-gradient(135deg,#FFD570 0%,#FFC15E 100%);color:var(--plum);box-shadow:0 12px 30px rgba(20,5,35,.35);font-weight:800}
-.hcta:hover{background:linear-gradient(135deg,#FFDD87 0%,#FFB23A 100%)}
-button:focus-visible,input:focus-visible,textarea:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid rgba(201,58,100,.55);outline-offset:2px}
-.note{text-align:center;font-size:12px;color:var(--ink3);margin-top:12px;line-height:1.55}
+.sec{padding-block:48px}
+.sec.tint{background:var(--green-soft)}.sec.white{background:var(--white)}
+.st{font-family:var(--fd);font-weight:700;font-size:22px;line-height:1.25;letter-spacing:-.015em;text-wrap:balance;margin-bottom:8px}
+.ss{font-size:15.5px;color:var(--ink3);margin-bottom:22px}
 
-/* ===== KARTU CONTOH HASIL ===== */
-.pvwrap{position:relative;z-index:2;margin-top:-58px;padding:0 20px}
-.pvwrap .sum{box-shadow:0 22px 48px rgba(47,17,72,.28);border-color:rgba(201,58,100,.3);text-align:center}
-.pvwrap .sum .br{text-align:left}
-.pvwrap .sum .lock{text-align:center}
+.seg{--track:rgba(255,255,255,.16);--fill:var(--coral);position:relative;height:10px;background:var(--track);-webkit-mask-image:repeating-linear-gradient(90deg,#000 0,#000 calc(10% - 3px),transparent calc(10% - 3px),transparent 10%);mask-image:repeating-linear-gradient(90deg,#000 0,#000 calc(10% - 3px),transparent calc(10% - 3px),transparent 10%)}
+.seg b{position:absolute;top:0;bottom:0;left:0;background:var(--fill)}
+.seg.lt{--track:var(--green-soft);--fill:var(--green)}
+.m4{margin:14px 0}
+.m4 .l{display:flex;justify-content:space-between;font-size:13.5px;font-weight:600;margin-bottom:6px}
 
-/* ===== PANEL CHAT ===== */
-.chs{opacity:0;max-height:0;overflow:hidden;padding:0 20px;transition:opacity .5s,max-height .6s,padding .4s}
-.chs.open{opacity:1;max-height:6000px;overflow:visible;padding:26px 20px 6px}
-.chc{background:var(--card);border-radius:22px;border:1px solid var(--bd2);overflow:hidden;box-shadow:0 14px 36px rgba(47,17,72,.14)}
-.chc .pt{background:var(--bd)}
-.chh{display:flex;align-items:center;gap:12px;padding:14px 18px;background:var(--plum);color:#fff}
-.ava{width:38px;height:38px;border-radius:50%;background:#fff;border:2px solid var(--sun);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
-.cht{flex:1;min-width:0}.cht h3{font-family:var(--fd);font-size:16px;font-weight:700;color:#fff}.cht p{font-size:12px;color:var(--lilac)}
-.cx{width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.08);cursor:pointer;color:#fff;font-size:14px;transition:background .2s}
-.cx:hover{background:rgba(255,255,255,.18)}
-.msgs{padding:18px 14px;background:var(--sf);scroll-behavior:smooth;max-height:55vh;max-height:55dvh;overflow-y:auto}
-.msg{display:flex;gap:8px;margin-bottom:13px;align-items:flex-start}.msg.user{flex-direction:row-reverse}
-.ma{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;background:#fff;border:1.5px solid var(--goldl)}.msg.user .ma{display:none}
-.bub{max-width:calc(100% - 46px);padding:11px 14px;border-radius:16px;font-size:13.5px;line-height:1.6;overflow-wrap:anywhere;background:var(--card);border:1px solid var(--bd2);border-bottom-left-radius:5px}
-.msg.user .bub{max-width:85%;background:var(--plum2);color:#fff;border-bottom-right-radius:5px;border:none}
-.bub.wide{max-width:100%;width:100%}.bub.gr{background:var(--goldp);border-color:var(--goldl)}.bub small{color:var(--ink3);font-size:12px}
-.qn{display:block;font-size:12px;font-weight:700;color:var(--goldt);margin-bottom:5px}
-.typ{display:flex;gap:4px;padding:6px 4px}.typ span{width:6px;height:6px;background:var(--goldm);border-radius:50%;animation:t 1.2s infinite}
-.typ span:nth-child(2){animation-delay:.2s}.typ span:nth-child(3){animation-delay:.4s}
-@keyframes t{0%,60%,100%{opacity:.3}30%{opacity:1}}
-.ci{padding:12px 14px;background:var(--card);border-top:1px solid var(--bd);padding-bottom:calc(12px + env(safe-area-inset-bottom,0px))}
-.opts{display:flex;flex-direction:column;gap:7px}
-.ob{padding:10px 13px;border:1.5px solid var(--bd2);border-radius:11px;background:var(--sf);font-family:var(--fb);font-size:13.5px;font-weight:500;color:var(--ink2);cursor:pointer;text-align:left;min-height:46px;display:flex;align-items:center;gap:11px;transition:border-color .15s,background .15s}
-.ob:hover{border-color:var(--gold);background:var(--goldp)}
-.ob b{color:var(--goldt);background:#fff;border:1px solid var(--goldl);border-radius:50%;min-width:24px;width:24px;height:24px;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
-.fi{width:100%;padding:12px 14px;background:var(--sf);border:1.5px solid var(--bd2);border-radius:11px;font-family:var(--fb);font-size:14px;color:var(--ink);display:block}
-textarea.fi{resize:none;min-height:64px}.fi:focus-visible{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,58,100,.18)}
-.ci .btn{margin-top:10px;padding:12px 18px;font-size:14px;min-height:46px}
-.cn{text-align:center;color:var(--ink3);font-size:13px;padding:6px}
+.ticket{background:var(--ink);color:var(--paper);border-radius:22px;padding:20px}
+.tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:var(--coral);color:var(--ink);border-radius:999px;padding:3px 12px;margin-bottom:14px}
+.ticket .tag{display:block;margin:0 auto 14px;text-align:center}
+.ticket h3{font-family:var(--fd);font-weight:600;font-size:18px;line-height:1.3;margin-bottom:12px}
+.pat{background:var(--coral);color:var(--ink);border-radius:14px;padding:13px 15px;margin-bottom:6px}
+.pat em{display:block;font-style:normal;font-size:11px;font-weight:700;letter-spacing:.12em}
+.pat b{display:block;font-family:var(--fd);font-weight:600;font-size:17px;line-height:1.3;margin-top:2px}
+.pat span{font-size:13.5px}
+.perf{position:relative;margin:20px -20px 16px;border-top:2px dashed rgba(255,255,255,.28)}
+.perf::before,.perf::after{content:'';position:absolute;top:-12px;width:22px;height:22px;border-radius:50%;background:var(--paper)}
+.perf::before{left:-11px}.perf::after{right:-11px}
+.ticket .lock{font-size:14px;color:#C9D6CE}.ticket .lock strong{color:#fff}
 
-/* ===== KARTU HASIL ===== */
-.sum{background:var(--card);border:1px solid var(--goldl);border-radius:18px;padding:18px}
-.sum h4{font-family:var(--fd);font-size:18px;font-weight:700;margin-bottom:4px;letter-spacing:-.01em}.sum .sub{font-size:12px;color:var(--ink3);margin-bottom:8px}
-.si{padding:11px 0;border-bottom:1px solid var(--bd);font-size:13.5px;color:var(--ink2);line-height:1.65}.si:last-child{border:none}
-.si strong{display:block;font-size:12px;font-weight:700;color:var(--goldt);margin-bottom:3px}
-.pat{background:var(--goldp);border:1px solid var(--goldl);border-left:5px solid var(--gold);border-radius:6px 14px 14px 6px;padding:13px 15px;margin:8px 0 4px}
-.pat b{display:block;font-family:var(--fd);font-size:19px;font-weight:700;color:var(--ink);letter-spacing:-.01em;line-height:1.3}.pat em{font-style:normal;font-size:12px;color:var(--goldt);font-weight:600}
-.br{margin:9px 0;font-size:12.5px}.br span{display:flex;justify-content:space-between;margin-bottom:4px;color:var(--ink2)}.br em{font-style:normal;font-weight:600}
-.bar{height:7px;background:var(--rosep);border-radius:4px;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--rose),var(--gold));border-radius:4px}
-.lock{background:var(--rosep);border:1.5px dashed rgba(107,70,168,.38);border-radius:12px;padding:11px 13px;font-size:13px;color:var(--ink2);margin-top:8px}
-.sample .tag{display:inline-block;font-size:11px;font-weight:700;color:var(--plum);background:var(--sun);border-radius:6px;padding:3px 9px;margin-bottom:10px}
+.checks{display:flex;flex-direction:column;gap:10px}
+.chk{display:flex;gap:14px;align-items:flex-start;text-align:left;width:100%;padding:16px;background:var(--white);border:1.5px solid var(--line);border-radius:16px;cursor:pointer;font-size:15.5px;color:var(--ink);transition:background .15s,border-color .15s}
+.chk .bx{width:24px;height:24px;border:2px solid var(--ink);border-radius:7px;flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;background:var(--white)}
+.chk[aria-pressed="true"]{border-color:var(--green);background:#fff}
+.chk[aria-pressed="true"] .bx{background:var(--green);border-color:var(--green)}
+.chk[aria-pressed="true"] .bx::after{content:'';width:11px;height:6px;border-left:2.5px solid #fff;border-bottom:2.5px solid #fff;transform:rotate(-45deg) translate(1px,-1px)}
+.cnt{font-size:14px;font-weight:700;color:var(--green);margin:14px 0 0;min-height:22px}
+.pain-end{margin:18px 0 0;font-family:var(--fd);font-weight:600;font-size:17px;line-height:1.4;text-wrap:balance}
 
-/* ===== FORM LAPORAN ===== */
-.rep{background:var(--card);border:1.5px solid var(--gold);border-radius:16px;padding:18px}
-.rep h4{font-family:var(--fd);font-size:17px;font-weight:700;margin-bottom:6px;letter-spacing:-.01em}.rep>p{font-size:13px;color:var(--ink3);margin-bottom:14px}
-.rf{margin-bottom:12px}.rl{display:block;font-size:13px;font-weight:600;color:var(--ink2);margin-bottom:6px}
-.rr{display:grid;grid-template-columns:1fr 1fr;gap:9px}
-.rr label{display:flex;align-items:center;justify-content:center;gap:7px;padding:12px 9px;border:1.5px solid var(--bd2);border-radius:11px;background:var(--sf);cursor:pointer;font-size:13.5px;min-height:46px}
-.rr input,.ag input{accent-color:var(--gold);width:17px;height:17px}.rr label:has(input:checked){border-color:var(--gold);background:var(--goldp)}
-.ag{display:flex;gap:10px;align-items:flex-start;background:var(--sf);border:1px solid var(--bd2);border-radius:11px;padding:12px;cursor:pointer;font-size:12.5px;color:var(--ink2)}.ag input{margin-top:2px;flex-shrink:0}
-.ag a{color:var(--goldt);font-weight:700}
-.err{display:none;background:var(--redp);color:var(--red);border:1px solid rgba(181,42,42,.2);border-radius:10px;padding:9px 11px;font-size:13px;margin-top:12px}.err.on{display:block}
-.snd{display:none;margin-top:13px}.snd.on{display:flex}
-.done{text-align:center}.dc{width:56px;height:56px;background:var(--tealp);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;color:var(--teal);font-size:26px}
-.done h4{font-family:var(--fd);font-size:19px;margin-bottom:7px}.done p{font-size:13.5px;color:var(--ink3);margin-bottom:14px}
-.wa{background:#0F7A6E!important}
-.mc{text-align:left;background:var(--amberp);border:1px solid var(--amber);border-radius:11px;padding:11px 13px;font-size:12.5px;color:#6B3F0C;margin-top:13px}
-.cons{margin-top:18px;padding:14px;background:var(--rosep);border-radius:13px;border:1px solid rgba(107,70,168,.22);text-align:center}
-.cons p{font-size:13px;margin-bottom:7px}.cons a{color:var(--rose);font-weight:700;text-decoration:none;display:inline-block;margin:3px 0}
-.spin{width:18px;height:18px;border:3px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:s .8s linear infinite}@keyframes s{to{transform:rotate(360deg)}}
+.bento{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tile{border-radius:20px;padding:18px;min-width:0}
+.tile.w{grid-column:1/-1}
+.tile h3{font-family:var(--fd);font-weight:600;font-size:15px;line-height:1.3;margin-bottom:6px}
+.tile p{font-size:14px;line-height:1.5}
+.tile .pill{display:inline-block;margin-top:12px;font-size:11.5px;font-weight:700;border-radius:999px;padding:2px 11px}
+.t1{background:var(--green);color:#fff}.t1 .pill{background:rgba(255,255,255,.2)}
+.t2{background:var(--coral-soft)}.t2 .pill{background:#fff}
+.t3{background:var(--green-soft)}.t3 .pill{background:#fff}
+.t4{background:var(--ink);color:var(--paper)}.t4 .pill{background:var(--coral);color:var(--ink)}
+.t2 .seg,.t1 .seg{margin-top:14px}
+.t2 .seg{--track:#fff;--fill:var(--coral)}
+.t1 .seg{--track:rgba(255,255,255,.22);--fill:#fff}
 
-/* ===== SEKSI LANDING ===== */
-.band{padding:38px 22px}
-.band.tint{background:var(--goldp)}
-.st{font-family:var(--fd);font-size:22px;font-weight:800;line-height:1.2;letter-spacing:-.02em;margin-bottom:7px;text-wrap:balance}
-.ss{font-size:13.5px;color:var(--ink3);margin-bottom:18px}
-.band .btn{margin-top:20px}
+.rail{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 calc(var(--gr)*-1) 0 calc(var(--gl)*-1);padding:2px var(--gr) 14px var(--gl);scroll-padding-left:var(--gl);-webkit-overflow-scrolling:touch}
+.rc{flex:0 0 184px;scroll-snap-align:start;border-radius:20px;padding:16px;min-height:178px;display:flex;flex-direction:column;justify-content:space-between}
+.rc .ini{font-family:var(--fd);font-weight:700;font-size:42px;line-height:1}
+.rc b{display:block;font-family:var(--fd);font-weight:600;font-size:14px;line-height:1.3;margin-bottom:4px}
+.rc span{display:block;font-size:13.5px;line-height:1.4}
+.rc:nth-child(4n+1){background:var(--green);color:#fff}
+.rc:nth-child(4n+2){background:var(--coral);color:var(--ink)}
+.rc:nth-child(4n+3){background:var(--ink);color:var(--paper)}
+.rc:nth-child(4n+4){background:var(--white);color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.hint{font-size:12.5px;font-weight:700;color:var(--green);margin-top:4px}
 
-.band.centered{padding:38px 22px;text-align:center}
-.band.centered .st,.band.centered .ss{text-align:center;margin-left:auto;margin-right:auto;max-width:100%}
-.band.centered .btn{max-width:360px;margin-left:auto;margin-right:auto}
-.band.centered .pain{text-align:left;max-width:100%}
-.band.centered .pain-end{max-width:100%;margin-left:auto;margin-right:auto}
-.band.centered .ben{max-width:100%;text-align:left}
-.band.centered .steps{text-align:left;max-width:100%}
-.band.centered .faq{text-align:left;max-width:100%}
-.band.centered .pgrid{text-align:left}
+.prev{background:var(--white);border:1.5px solid var(--line);border-radius:20px;padding:16px}
+.prev .qn{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);display:block;margin-bottom:6px}
+.prev .q{border-left:3px solid var(--green);padding-left:12px;font-size:15px}
+.dots{display:flex;gap:8px;margin-top:14px;align-items:center}
+.dots i{width:30px;height:30px;border-radius:50%;border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;font-style:normal;font-size:12.5px;font-weight:700;color:var(--ink3)}
+.dots i.on{background:var(--coral);border-color:var(--coral);color:var(--ink)}
+.dots small{font-size:12.5px;color:var(--ink3);margin-left:4px}
+.steps3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}
+.steps3 b.n{display:block;font-family:var(--fd);font-weight:700;font-size:30px;color:var(--green);line-height:1;margin-bottom:8px}
+.steps3 b.t{display:block;font-size:14.5px;line-height:1.3;margin-bottom:3px}
+.steps3 p{font-size:13px;color:var(--ink3);line-height:1.5}
 
-.pain{display:flex;flex-direction:column;gap:10px}
-.pain p{background:#fff;border-radius:4px 16px 16px 16px;padding:12px 14px 12px 16px;border-left:4px solid var(--gold);font-size:13.5px;color:var(--ink2);box-shadow:0 6px 16px rgba(47,17,72,.07)}
-.pain-end{margin-top:18px;font-family:var(--fd);font-size:17px;font-weight:700;line-height:1.35;color:var(--ink);text-align:center}
-
-.ben{display:flex;gap:12px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--bd);text-align:left}
-.ben:last-of-type{border-bottom:none}
-.bi{width:42px;height:42px;border-radius:13px;background:var(--goldp);border:1px solid var(--goldl);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
-.ben b{display:block;font-size:14.5px;color:var(--ink);margin-bottom:2px}
-.ben p{font-size:13px;color:var(--ink3)}
-.tg{display:inline-block;margin-top:5px;font-size:11px;font-weight:700;color:var(--teal);background:var(--tealp);border-radius:6px;padding:2px 7px}
-
-.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
-.pc{background:#fff;border-radius:11px;padding:11px 13px;border-left:5px solid var(--gold);box-shadow:0 4px 12px rgba(47,17,72,.06)}
-.pc:nth-child(4n+2){border-left-color:var(--rose)}.pc:nth-child(4n+3){border-left-color:var(--teal)}.pc:nth-child(4n+4){border-left-color:var(--amber)}
-.pc b{display:block;font-family:var(--fd);font-size:14px;font-weight:700;line-height:1.25;color:var(--ink)}
-.pc span{font-size:12px;color:var(--ink3)}
-
-.steps{display:flex;flex-direction:column;text-align:left}
-.step{position:relative;display:flex;align-items:flex-start;text-align:left;gap:12px;padding:0 0 20px}
-.step:last-child{padding-bottom:0}
-.step:not(:last-child)::before{content:'';position:absolute;left:15px;top:36px;bottom:4px;width:2px;background:var(--goldl)}
-.step>span{width:32px;height:32px;flex-shrink:0;border-radius:50%;background:var(--gold);color:#fff;font-family:var(--fd);font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 5px var(--goldp)}
-.step b{display:block;font-size:14.5px;color:var(--ink);margin-bottom:2px;padding-top:5px}.step p{font-size:13px;color:var(--ink3)}
-
-.faq details{background:#fff;border:1px solid var(--bd2);border-radius:13px;margin-bottom:9px;overflow:hidden}
-.faq summary{list-style:none;cursor:pointer;padding:14px 15px;font-weight:700;font-size:14px;display:flex;justify-content:space-between;align-items:center;gap:11px;color:var(--ink)}
+.faq{border-bottom:1.5px solid var(--ink)}
+.faq details{border-top:1.5px solid var(--ink)}
+.faq summary{list-style:none;cursor:pointer;padding:17px 0;font-weight:700;font-size:16px;display:flex;justify-content:space-between;align-items:center;gap:14px}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:'+';font-size:20px;line-height:1;color:var(--gold);font-weight:600;flex-shrink:0}
+.faq summary::after{content:'+';font-family:var(--fd);font-size:20px;line-height:1;flex-shrink:0}
 .faq details[open] summary::after{content:'\2212'}
-.faq details p{padding:0 15px 15px;font-size:13.5px;color:var(--ink3)}
-.faq details p a{color:var(--goldt);font-weight:700}
+.faq details p{padding:0 0 18px;color:var(--ink2);font-size:15.5px}
 
-.fin{background:linear-gradient(165deg,#34124F 0%,#6E2166 55%,#B3305F 100%);color:#fff;text-align:center;padding:42px 22px}
-.fin .st{color:#fff}.fin .ss{color:var(--lilac);margin-bottom:24px}
-.fin .btn{background:linear-gradient(135deg,#FFD570 0%,#FFC15E 100%);color:var(--plum);box-shadow:0 12px 30px rgba(20,5,35,.35);font-weight:800}.fin .btn:hover{background:linear-gradient(135deg,#FFDD87 0%,#FFB23A 100%)}
-.fin :focus-visible{outline-color:#fff}
+.dark{background:var(--ink);color:var(--paper)}
+.dark .kick{color:var(--coral)}
+.dark .ss{color:#B9C8BF}
+.kr{display:grid;grid-template-columns:42% 1fr;gap:12px;padding:13px 0;border-top:1px solid rgba(255,255,255,.16);font-size:14.5px}
+.kr b{font-weight:700}.kr span{color:#B9C8BF;font-size:13.5px;line-height:1.5}
+.krs{border-bottom:1px solid rgba(255,255,255,.16);margin-bottom:24px}
 
-/* ===== MENU FOOTER & LEGAL ===== */
-.foot-nav{display:flex;flex-wrap:wrap;gap:6px 16px;justify-content:center;padding:22px 20px 0}
-.foot-nav a{font-size:12.5px;font-weight:600;color:var(--goldt);text-decoration:none;padding:4px 2px}
-.foot-nav a:hover{text-decoration:underline}
-.legal{font-size:11px;color:#7A6B87;line-height:1.6;text-align:center;padding:14px 20px 70px}
-.legal a{color:var(--goldt);font-weight:600}
+footer .wrap{padding-block:22px 0;font-size:13px;color:var(--ink2)}
+footer .wrap span{display:block}
+.legal{font-size:12px;color:var(--ink3);line-height:1.65;padding:12px var(--gr) 96px var(--gl)}
 
-/* ===== TOMBOL MELAYANG ===== */
-.stk{position:fixed;left:0;right:0;bottom:0;z-index:9999;padding:11px 14px calc(11px + env(safe-area-inset-bottom,0px));background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-top:1px solid var(--bd);transform:translateY(110%);visibility:hidden;transition:transform .35s,visibility 0s .35s}
+.chs{background:var(--white);border-block:1.5px solid var(--ink)}
+.chh{display:flex;align-items:center;gap:12px;padding:14px var(--gr) 12px var(--gl)}
+.ava{width:36px;height:36px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-weight:600;font-size:14px;flex-shrink:0}
+.cht{flex:1;min-width:0}.cht h3{font-family:var(--fd);font-weight:600;font-size:14px;line-height:1.2}.cht p{font-size:12.5px;color:var(--ink3)}
+.cx{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--ink);background:transparent;cursor:pointer;font-weight:700}
+.cx:hover{background:var(--green-soft)}
+.pseg{display:flex;gap:3px;padding:0 var(--gr) 14px var(--gl)}
+.pseg i{flex:1;height:5px;border-radius:3px;background:var(--green-soft);transition:background .3s}
+.pseg i.on{background:var(--coral)}
+.msgs{padding:18px var(--gr) 8px var(--gl);background:var(--paper);max-height:58vh;max-height:58dvh;overflow-y:auto;scroll-behavior:smooth;border-top:1px solid var(--line)}
+.m{margin-bottom:16px}
+.m.bot .tx{border-left:3px solid var(--green);padding-left:13px;font-size:15.5px;line-height:1.6;overflow-wrap:anywhere}
+.m.bot .tx.gr{background:var(--green-soft);border-left:0;padding:12px 14px;border-radius:14px}
+.m.bot .tx.wide{border-left:0;padding-left:0}
+.m.user{display:flex;justify-content:flex-end}
+.m.user .tx{background:var(--coral);color:var(--ink);font-weight:600;border-radius:18px 18px 4px 18px;padding:9px 15px;max-width:86%;font-size:15px;overflow-wrap:anywhere}
+.qn{display:block;font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:5px}
+.typ{display:flex;gap:4px;padding:6px 0}.typ span{width:7px;height:7px;background:var(--green);border-radius:50%;animation:t 1.2s infinite}
+.typ span:nth-child(2){animation-delay:.2s}.typ span:nth-child(3){animation-delay:.4s}
+@keyframes t{0%,60%,100%{opacity:.25}30%{opacity:1}}
+.ci{padding:14px var(--gr) calc(16px + env(safe-area-inset-bottom,0px)) var(--gl);background:var(--white);border-top:1px solid var(--line)}
+.opts{display:flex;flex-direction:column;gap:8px}
+.ob{display:flex;align-items:center;gap:12px;padding:10px 14px;border:1.5px solid var(--line);border-radius:14px;background:var(--white);font-weight:600;font-size:14.5px;cursor:pointer;text-align:left;min-height:48px;transition:border-color .15s,background .15s}
+.ob:hover{border-color:var(--green);background:var(--green-soft)}
+.ob b{width:26px;height:26px;border-radius:50%;background:var(--green-soft);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
+.fi{width:100%;padding:12px 14px;background:var(--paper);border:1.5px solid var(--line);border-radius:14px;display:block;font-size:16px}
+textarea.fi{resize:none;min-height:60px}.fi:focus-visible{outline:none;border-color:var(--green);box-shadow:0 0 0 3px var(--green-soft)}
+.ci .btn{margin-top:10px}
+.cn{text-align:center;color:var(--ink3);font-size:13.5px;padding:6px}
+
+.res{background:var(--white);border:1.5px solid var(--ink);border-radius:18px;padding:16px}
+.res h4{font-family:var(--fd);font-weight:600;font-size:16px;line-height:1.3;margin-bottom:4px}
+.res .sub{font-size:13px;color:var(--ink3);margin-bottom:10px}
+.res .pat{margin:10px 0 4px}
+.si{padding:12px 0;border-bottom:1px solid var(--line);font-size:14.5px;color:var(--ink2)}.si:last-child{border:0}
+.si strong.k{display:block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:3px}
+.res .lock{background:var(--coral-soft);border:1.5px dashed var(--coral-ink);border-radius:12px;padding:11px 13px;font-size:13.5px;color:var(--ink2);margin-top:10px}
+
+.rep{background:var(--white);border:1.5px solid var(--ink);border-radius:18px;padding:16px}
+.rep h4{font-family:var(--fd);font-weight:600;font-size:16px;line-height:1.3;margin-bottom:6px}.rep>p{font-size:14px;color:var(--ink3);margin-bottom:14px}
+.rl{display:block;font-size:14px;font-weight:700;margin-bottom:6px}
+.ag{display:flex;gap:10px;align-items:flex-start;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:11px;cursor:pointer;font-size:13.5px;color:var(--ink2);margin-top:11px}
+.ag input{accent-color:var(--green);width:19px;height:19px;margin-top:2px;flex-shrink:0}
+.demo-badge{display:inline-block;font-size:11.5px;font-weight:700;background:var(--coral);color:var(--ink);border-radius:999px;padding:2px 12px;margin-bottom:10px}
+.err{display:none;background:var(--err-bg);color:var(--err);border-radius:10px;padding:9px 12px;font-size:13.5px;font-weight:600;margin-top:12px}.err.on{display:block}
+.done{text-align:center}.dc{width:56px;height:56px;background:var(--green-soft);color:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:26px;font-weight:700}
+.done h4{font-family:var(--fd);font-weight:600;font-size:17px;margin-bottom:7px}.done p{font-size:14.5px;color:var(--ink3);margin-bottom:14px}
+.mc{text-align:left;background:var(--warn-bg);border-radius:12px;padding:10px 13px;font-size:13.5px;margin-top:14px}
+.spin{width:18px;height:18px;border:3px solid rgba(243,246,241,.4);border-top-color:var(--paper);border-radius:50%;animation:s .8s linear infinite}@keyframes s{to{transform:rotate(360deg)}}
+
+.stk{position:fixed;left:max(0px,calc(50% - 230px));right:max(0px,calc(50% - 230px));bottom:0;z-index:50;padding:11px var(--gr) calc(11px + env(safe-area-inset-bottom,0px)) var(--gl);background:rgba(251,241,243,.96);backdrop-filter:blur(8px);border-top:1.5px solid var(--ink);transform:translateY(110%);visibility:hidden;transition:transform .3s,visibility 0s .3s}
 .stk.show{transform:none;visibility:visible;transition-delay:0s}
-.stk .btn{max-width:408px;margin:0 auto;padding:13px 18px;font-size:14px;background:linear-gradient(135deg,#FFD570 0%,#FFC15E 100%);color:var(--plum);font-weight:800;box-shadow:0 8px 20px rgba(20,5,35,.25)}
-.stk .btn:hover{background:linear-gradient(135deg,#FFDD87 0%,#FFB23A 100%)}
+.stk .btn{justify-content:center;text-align:center;padding:0 24px}
 
 @media(max-width:520px){
-  body{padding:0;background:var(--plum)}
-  .shell{border-radius:0;border-left:none;border-right:none;box-shadow:none;max-width:100%}
-  .hd{padding:14px 18px}
-  .hero{padding:24px 18px 84px}
-  .ht{font-size:26px}
-  .band,.fin{padding-left:18px;padding-right:18px}
-  .msgs{max-height:50vh;max-height:50dvh;padding:15px 13px}
+  body{padding:0;background:var(--paper)}
+  .shell{border-radius:0;box-shadow:none}
 }
-@media(prefers-reduced-motion:reduce){.chs,.pf{transition:none}.typ span{animation:none;opacity:.6}.msgs{scroll-behavior:auto}}
+@media(prefers-reduced-motion:reduce){.pseg i,.btn,.btn .ar,.stk{transition:none}.typ span{animation:none;opacity:.6}.msgs{scroll-behavior:auto}}
+.rf{margin-bottom:12px}
+.rr{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.rr label{display:flex;align-items:center;justify-content:center;gap:7px;padding:12px 9px;border:1.5px solid var(--line);border-radius:14px;background:var(--paper);cursor:pointer;font-size:14px;min-height:46px}
+.rr input{accent-color:var(--green);width:18px;height:18px}
+.rr label:has(input:checked){border-color:var(--green);background:var(--green-soft)}
+.ag a{color:var(--green)}
+.rep .btn.snd{display:none;margin-top:14px;width:100%}.rep .btn.snd.on{display:flex}
+.btn.wa{background:#0F7A6E;color:#fff;margin-top:0}.btn.wa .ar{background:#fff;color:#0F7A6E}
+.cons{margin-top:16px;padding:14px;background:var(--green-soft);border-radius:14px;text-align:center}
+.cons p{font-size:13.5px;margin-bottom:7px}.cons a{color:var(--green-deep);font-weight:700;display:inline-block;margin:3px 0}
+.foot-nav{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 18px;padding:22px var(--gr) 0 var(--gl)}
+.foot-nav a{font-size:13px;font-weight:700;text-decoration:none;padding:4px 2px}
+.legal a{color:var(--green)}
+.faq details p a{color:var(--green)}
+.msgs input.fi,.ci input.fi{min-height:48px}
+
+.chs{padding:28px var(--gr) 32px var(--gl)}
+.chh{padding:0 0 14px}
+.stage{background:var(--paper);border:1.5px solid var(--ink);border-radius:20px;padding:18px 16px;color:var(--ink)}
+.fade{animation:fin .35s ease}
+@keyframes fin{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.rt{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green);margin-bottom:6px}
+.stq{font-family:var(--fd);font-weight:700;font-size:20px;line-height:1.3;letter-spacing:-.01em;margin-bottom:14px;text-wrap:balance}
+.stq.s{font-size:18px;line-height:1.4}
+.p2{color:var(--ink3);font-size:14px;margin:-6px 0 14px}
+.qh{display:flex;align-items:baseline;gap:6px;margin-bottom:8px}
+.qh b{font-family:var(--fd);font-weight:700;font-size:28px;line-height:1}
+.qh span{color:var(--ink3);font-weight:600}
+.qh em{margin-left:auto;font-style:normal;font-size:12.5px;font-weight:700;color:var(--green)}
+.pb{height:8px;background:var(--green-soft);border-radius:8px;overflow:hidden;margin-bottom:16px}
+.pb i{display:block;height:100%;background:var(--coral);border-radius:8px;transition:width .3s}
+.cat{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);margin-bottom:6px}
+.scale{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.scale button{aspect-ratio:1;border-radius:14px;border:1.5px solid var(--ink);background:var(--white);font-family:var(--fd);font-weight:700;font-size:18px;color:var(--ink);cursor:pointer;transition:background .15s,transform .15s}
+.scale button:hover,.scale button.sel{background:var(--coral);transform:translateY(-2px)}
+.ends{display:flex;justify-content:space-between;font-size:11.5px;color:var(--ink3);margin-top:9px}
+.back{background:none;border:0;color:var(--ink3);font-weight:600;font-size:13px;margin:14px auto 0;cursor:pointer;text-decoration:underline;display:block}
+.field{width:100%;padding:13px 14px;border-radius:14px;border:1.5px solid var(--line);background:var(--white);font-size:16px;color:var(--ink);margin-bottom:12px;display:block;resize:none}
+.field:focus-visible{outline:none;border-color:var(--green);box-shadow:0 0 0 3px var(--green-soft)}
+.stage .btn.plain{width:100%;margin-top:0}
+.stage .opts{margin-bottom:4px}
+.bless{background:var(--green-soft);border-radius:14px;padding:15px;margin-bottom:14px;font-size:14.5px;color:var(--ink2)}
+.bless b{color:var(--green-deep)}
+.tabs{display:flex;background:var(--green-soft);border-radius:12px;padding:4px;margin:14px 0}
+.tabs button{flex:1;padding:9px 4px;border:0;border-radius:9px;background:none;font-weight:700;font-size:13px;color:var(--ink3);cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--white);color:var(--green-deep);box-shadow:0 2px 6px rgba(47,17,72,.16)}
+.stage .pat{margin:0 0 8px}
+.stage .pat span{font-size:13.5px}
+.stage .lock{background:var(--coral-soft);border:1.5px dashed var(--coral-ink);border-radius:12px;padding:11px 13px;font-size:13.5px;color:var(--ink2);margin-top:10px}
+.lead-box{margin-top:18px;border-top:1.5px dashed var(--line);padding-top:16px}
+.lead-box h3{font-family:var(--fd);font-weight:700;font-size:16px;margin-bottom:4px}
+.lead-box>p{font-size:13.5px;color:var(--ink3);margin-bottom:12px}
+.stage .err{margin:0 0 12px}
+.dash{border:1.5px solid var(--ink);border-radius:14px;overflow:hidden;margin:12px 0;font-size:13.5px;background:var(--white)}
+.dash .dh{background:var(--ink);color:var(--paper);padding:8px 13px;font-size:11px;font-weight:700;letter-spacing:.1em}
+.dash .r{display:flex;justify-content:space-between;gap:10px;padding:9px 13px;border-top:1px solid var(--line)}
+.dash .r span{color:var(--ink3)}
+.disc{font-size:12px;color:var(--ink3);line-height:1.6;margin-top:12px}
+.sec-x{margin:0 0 12px}
+@media(prefers-reduced-motion:reduce){.fade,.pb i{animation:none;transition:none}}
 </style>
 </head>
 <body>
-<div class="lc" id="lc">
-<div class="stk" id="stk"><button type="button" class="btn" onclick="LC.open()">Mulai LOVECode Test (± 4 menit)</button></div>
+<div class="stk" id="stk"><button type="button" class="btn" onclick="LC.open(this)"><span>Mulai Test</span></button></div>
+
 <div class="shell">
+<header class="wrap top"><span class="tagd">LOVECode</span></header>
 
-<div class="top">
-<div class="pt"><div class="pf" style="width:100%"></div></div>
-<div class="hd"><div class="logo">Life<i>Code</i></div><div class="logo-s">LOVECode 💗</div></div>
-<div class="hero">
-<div class="eb">💗 Tes gratis · 10 pertanyaan · ± 4 menit</div>
-<h1 class="ht">Kenali pola emosionalmu dalam hubungan.</h1>
-<p class="hdsc">Kenali <strong>pola emosional, cara menghadapi konflik, dan kebutuhan cintamu</strong>. Bukan untuk membaca pikiran pasangan, tapi untuk memahami perasaanmu sendiri.</p>
-<button id="start" class="btn hcta" type="button" onclick="LC.open()">✨ Mulai LOVECode Test</button>
-<p class="note">Alat refleksi diri, bukan diagnosis dan pengganti tes psikologi.</p>
-<div class="trust"><span>✓ Gratis</span><span>✓ Hasil Instan</span><span>✓ Tanpa Daftar Akun</span></div>
-</div>
-</div>
+<section class="hero"><div class="wrap ctr">
+  <div class="venn" aria-hidden="true"><svg viewBox="0 0 300 140"><defs><clipPath id="ca"><circle cx="112" cy="70" r="60"/></clipPath></defs><circle cx="112" cy="70" r="60" style="fill:var(--coral)"/><circle cx="188" cy="70" r="60" style="fill:var(--green)"/><circle cx="188" cy="70" r="60" clip-path="url(#ca)" style="fill:var(--green-deep)"/><text x="78" y="74" text-anchor="middle" style="fill:var(--ink)">KAMU</text><text x="222" y="74" text-anchor="middle" style="fill:#fff">DIA</text><text x="150" y="74" text-anchor="middle" style="fill:#fff;font-size:9px">POLA</text></svg></div>
+  <p class="kick">Tes gratis · 10 pertanyaan · ± 4 menit</p>
+  <h1 class="ht">Kenali pola emosionalmu <span>dalam hubungan.</span></h1>
+  <p class="lead">Kenali <strong>pola emosional, cara menghadapi konflik, dan kebutuhan cintamu</strong>. Bukan menebak pikiran pasangan, tapi memahami pola yang muncul ketika kamu mencintai, kecewa, dan merasa tidak aman.</p>
+  <div class="facts"><div><b>10</b><span>pernyataan</span></div><div><b>4</b><span>menit</span></div><div><b>Rp0</b><span>biaya</span></div></div>
+</div></section>
 
-<div class="pvwrap">
-<div class="sum sample"><span class="tag">Contoh ilustrasi hasil</span>
-<h4>🧭 Profil Emosional Rina</h4>
-<div class="pat"><em>POLA UTAMA</em><b>The Silent Protector</b><em style="color:var(--ink3);font-weight:500">Pelindung yang Diam</em></div>
-<div class="br"><span><em>Kedekatan emosional</em><em>50</em></span><div class="bar"><i style="width:50%"></i></div></div>
-<div class="br"><span><em>Ekspresi perasaan</em><em>25</em></span><div class="bar"><i style="width:25%"></i></div></div>
-<div class="br"><span><em>Rasa aman</em><em>75</em></span><div class="bar"><i style="width:75%"></i></div></div>
-<div class="lock">🔒 Di laporan WhatsApp: <strong>apa yang dilihat pasangan vs yang sebenarnya terjadi</strong> dan <strong>"Cara Mencintai Saya"</strong>.</div></div>
-</div>
-
-<div class="chs" id="chs" role="region" aria-labelledby="ctt" aria-hidden="true">
-<div class="chc">
-<div class="pt"><div class="pf" id="prog" style="width:0%"></div></div>
-<div class="chh"><div class="ava">🧭</div><div class="cht"><h3 id="ctt">LIFE</h3><p>pendamping refleksi digitalmu</p></div><button type="button" class="cx" id="cx" aria-label="Tutup chat">✕</button></div>
-<div class="msgs" id="msgs" role="log" aria-live="polite"></div>
-<div class="ci" id="ci"></div>
-</div></div>
-
-<section class="band centered">
-<h2 class="st">Pernah merasa begini dalam hubunganmu?</h2>
-<p class="ss">Kalau salah satunya terasa dekat, tes ini dibuat untukmu.</p>
-<div class="pain">
-<p>Pasangan membalas lebih singkat dari biasanya, dan kamu langsung bertanya, "Dia masih peduli nggak, ya?"</p>
-<p>Kamu memilih diam dan memendam kecewa supaya tidak jadi ribut.</p>
-<p>Kamu sudah menunjukkan cinta lewat tindakan, tapi pasangan seperti menunggu kata-kata.</p>
-<p>Kalian bertengkar soal hal kecil, padahal yang dicari bukan itu.</p>
-</div>
-<p class="pain-end">Semua itu bukan soal siapa yang salah. Itu pola, dan pola bisa dikenali.</p>
-<button class="btn bright" type="button" onclick="LC.open()">Kenali Polaku Sekarang</button>
+<section class="chs" id="chs" hidden aria-label="LOVECode Test">
+  <div class="chh"><div class="ava">L</div><div class="cht"><h3>LOVECode Test</h3><p>jawab satu per satu, tanpa benar atau salah</p></div><button type="button" class="cx" id="cx" aria-label="Tutup tes">&#10005;</button></div>
+  <div class="stage" id="stage" aria-live="polite"></div>
 </section>
 
-<section class="band tint centered">
-<h2 class="st">Yang kamu dapat setelah 4 menit</h2>
-<p class="ss">Tanpa daftar akun, tanpa bayar.</p>
-<div class="ben"><div class="bi">🧭</div><div><b>Pola emosional utama</b><p>Satu dari 8 pola, lengkap dengan kekuatan dan tantangannya dalam hubungan.</p><span class="tg">hasil instant</span></div></div>
-<div class="ben"><div class="bi">📊</div><div><b>Peta 4 dimensi</b><p>Kedekatan emosional, ekspresi perasaan, keterbukaan saat konflik, dan rasa aman.</p><span class="tg">hasil instant</span></div></div>
-<div class="ben"><div class="bi">💌</div><div><b>Laporan lengkap via WhatsApp</b><p>Apa yang mungkin dilihat pasanganmu vs yang sebenarnya kamu rasakan, plus "Cara Mencintai Saya".</p><span class="tg">Gratis</span></div></div>
-</section>
+<main>
+<section class="sec white" id="hasil"><div class="wrap ctr">
+  <p class="kick">Contoh hasil</p>
+  <h2 class="st">Seperti inilah hasilmu</h2>
+  <p class="ss">Profil langsung muncul di layar. Sisanya ada di laporan WhatsApp.</p>
+  <div class="ticket">
+    <span class="tag">Contoh ilustrasi</span>
+    <h3>Profil Emosional Rina</h3>
+    <div class="pat"><em>POLA UTAMA</em><b>The Silent Protector</b><span>Pelindung yang Diam</span></div>
+    <div class="m4"><div class="l"><span>Kedekatan emosional</span><span>50</span></div><div class="seg"><b style="width:50%"></b></div></div>
+    <div class="m4"><div class="l"><span>Ekspresi perasaan</span><span>25</span></div><div class="seg"><b style="width:25%"></b></div></div>
+    <div class="m4"><div class="l"><span>Keterbukaan saat konflik</span><span>50</span></div><div class="seg"><b style="width:50%"></b></div></div>
+    <div class="m4"><div class="l"><span>Rasa aman</span><span>75</span></div><div class="seg"><b style="width:75%"></b></div></div>
+    <div class="perf"></div>
+    <p class="lock">Di laporan WhatsApp: <strong>apa yang dilihat pasangan vs yang sebenarnya terjadi</strong> dan <strong>"Cara Mencintai Saya"</strong>.</p>
+  </div>
+</div></section>
 
-<section class="band centered">
-<h2 class="st">8 pola emosional. Kamu yang mana?</h2>
-<p class="ss">Hasilmu akan jatuh di salah satunya.</p>
-<div class="pgrid">
-<div class="pc"><b>The Open Heart</b><span>Si Terbuka</span></div>
-<div class="pc"><b>The Silent Protector</b><span>Pelindung yang Diam</span></div>
-<div class="pc"><b>The Reassurance Seeker</b><span>Pencari Kepastian</span></div>
-<div class="pc"><b>The Independent Heart</b><span>Hati yang Mandiri</span></div>
-<div class="pc"><b>The Peace Keeper</b><span>Penjaga Kedamaian</span></div>
-<div class="pc"><b>The Direct Connector</b><span>Komunikator Langsung</span></div>
-<div class="pc"><b>The Action Lover</b><span>Pecinta Lewat Tindakan</span></div>
-<div class="pc"><b>The Deep Feeler</b><span>Perasa yang Mendalam</span></div>
+<section class="sec tint"><div class="wrap ctr">
+  <p class="kick">Cek cepat</p>
+  <h2 class="st">Mana yang pernah kamu rasakan?</h2>
+  <p class="ss">Ketuk yang terasa dekat.</p>
+  <div class="checks" id="checks">
+    <button type="button" class="chk" aria-pressed="false"><span class="bx"></span><span>Pasangan membalas lebih singkat dari biasanya, dan kamu langsung bertanya, "Dia masih peduli nggak, ya?"</span></button>
+    <button type="button" class="chk" aria-pressed="false"><span class="bx"></span><span>Kamu memilih diam dan memendam kecewa supaya tidak jadi ribut.</span></button>
+    <button type="button" class="chk" aria-pressed="false"><span class="bx"></span><span>Kamu sudah menunjukkan cinta lewat tindakan, tapi pasangan seperti menunggu kata-kata.</span></button>
+    <button type="button" class="chk" aria-pressed="false"><span class="bx"></span><span>Kalian bertengkar soal hal kecil, padahal yang dicari bukan itu.</span></button>
+  </div>
+  <p class="cnt" id="cnt" aria-live="polite">Belum ada yang dipilih.</p>
+  <p class="pain-end">Semua itu bukan soal siapa yang salah. Itu pola, dan pola bisa dikenali.</p>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <p class="kick">Yang kamu dapat</p>
+  <h2 class="st">Setelah 4 menit, kamu pegang ini</h2>
+  <p class="ss">Tanpa daftar akun, tanpa bayar.</p>
+  <div class="bento">
+    <div class="tile w t1"><h3>Pola emosional utama</h3><p>Satu dari 8 pola, lengkap dengan kekuatan dan tantangannya dalam hubungan.</p><span class="pill">hasil instan</span></div>
+    <div class="tile t2"><h3>Peta 4 dimensi</h3><p>Kedekatan, ekspresi, konflik, rasa aman.</p><div class="seg"><b style="width:60%"></b></div></div>
+    <div class="tile t3"><h3>Tanpa akun</h3><p>Mulai langsung dari HP, tanpa daftar.</p><span class="pill">gratis</span></div>
+    <div class="tile w t4"><h3>Laporan lengkap via WhatsApp</h3><p>Apa yang mungkin dilihat pasanganmu vs yang kamu rasakan, plus "Cara Mencintai Saya".</p><span class="pill">gratis</span></div>
+  </div>
+</div></section>
+
+<section class="sec white" id="tipe"><div class="wrap">
+  <p class="kick">8 pola</p>
+  <h2 class="st">Kamu yang mana?</h2>
+  <p class="ss">Hasilmu jatuh di salah satunya. Tidak ada pola yang buruk.</p>
+  <div class="rail" tabindex="0" role="region" aria-label="Daftar 8 pola, geser ke samping">
+    <div class="rc"><div class="ini">O</div><div><b>The Open Heart</b><span>Si Terbuka</span></div></div>
+    <div class="rc"><div class="ini">S</div><div><b>The Silent Protector</b><span>Pelindung yang Diam</span></div></div>
+    <div class="rc"><div class="ini">R</div><div><b>The Reassurance Seeker</b><span>Pencari Kepastian</span></div></div>
+    <div class="rc"><div class="ini">I</div><div><b>The Independent Heart</b><span>Hati yang Mandiri</span></div></div>
+    <div class="rc"><div class="ini">P</div><div><b>The Peace Keeper</b><span>Penjaga Kedamaian</span></div></div>
+    <div class="rc"><div class="ini">D</div><div><b>The Direct Connector</b><span>Komunikator Langsung</span></div></div>
+    <div class="rc"><div class="ini">A</div><div><b>The Action Lover</b><span>Pecinta Lewat Tindakan</span></div></div>
+    <div class="rc"><div class="ini">F</div><div><b>The Deep Feeler</b><span>Perasa yang Mendalam</span></div></div>
+  </div>
+  <p class="hint">Geser ke samping untuk melihat semua &rarr;</p>
+</div></section>
+
+<section class="sec tint" id="cara"><div class="wrap ctr">
+  <p class="kick">Cara kerjanya</p>
+  <h2 class="st">Satu langkah per layar, bukan formulir panjang</h2>
+  <p class="ss">Satu pernyataan per layar, jawab dengan skala 1 sampai 5.</p>
+  <div class="prev">
+    <span class="qn">Pernyataan 07 / 10 · Rasa Aman</span>
+    <p class="q">Perubahan kecil pada sikap pasangan mudah membuat saya bertanya, "Apakah dia masih peduli?"</p>
+    <div class="dots" aria-hidden="true"><i>1</i><i>2</i><i>3</i><i class="on">4</i><i>5</i><small>Sesuai</small></div>
+  </div>
+  <div class="steps3">
+    <div><b class="n">1</b><b class="t">Kenalan</b><p>Nama, tanggal lahir, dan awal hubungan.</p></div>
+    <div><b class="n">2</b><b class="t">Jawab 10</b><p>Tidak ada jawaban benar atau salah.</p></div>
+    <div><b class="n">3</b><b class="t">Terima hasil</b><p>Profil instan, laporan via WhatsApp.</p></div>
+  </div>
+</div></section>
+
+<section class="sec white" id="faq"><div class="wrap">
+  <p class="kick">FAQ</p>
+  <h2 class="st">Pertanyaan yang sering muncul</h2>
+  <div class="faq" style="margin-top:22px">
+    <details><summary>Apakah ini diagnosis psikologis?</summary><p>Bukan. Hasil menggambarkan kecenderungan saat ini, bersifat edukatif dan reflektif, dan bukan penentu apakah kamu harus bertahan atau berpisah.</p></details>
+    <details><summary>Berapa lama tesnya?</summary><p>Sekitar 4 menit: beberapa pertanyaan pembuka, lalu 10 pernyataan singkat dengan lima pilihan jawaban.</p></details>
+    <details><summary>Siapa yang bisa ikut?</summary><p>Pengguna usia 17 tahun ke atas yang sedang menikah atau berada dalam hubungan.</p></details>
+  </div>
+</div></section>
+</main>
+
+<footer>
+  <nav class="foot-nav" aria-label="Menu halaman"><a href="tentang.html">Tentang</a><a href="privasi.html">Privasi</a><a href="syarat.html">Syarat</a><a href="kontak.html">Kontak</a></nav>
+  <p class="legal"><strong>Disclaimer:</strong> Lovecode adalah bagian dari lifecode.my.id, platform edukasi refleksi diri. Hasil menggambarkan kecenderungan saat ini, bersifat edukatif dan reflektif, bukan diagnosis psikologis atau medis, dan bukan penentu apakah kamu harus bertahan atau berpisah. Jika mengalami tekanan emosional berat atau krisis, hubungi profesional berlisensi atau layanan kesehatan jiwa 119 ext. 8.<br><br>Halaman ini memakai Facebook Pixel untuk mengukur iklan (lihat <a href="privasi.html">Kebijakan Privasi</a>).</p>
+</footer>
 </div>
-<button class="btn bright" type="button" onclick="LC.open()">Temukan Polaku</button>
-</section>
-
-<section class="band tint centered">
-<h2 class="st">Cara kerjanya</h2>
-<p class="ss">Tiga langkah, langsung dari HP kamu.</p>
-<div class="steps">
-<div class="step"><span>1</span><div><b>Hitung perjalananmu</b><p>Lihat berapa hari kalian sudah melangkah bersama.</p></div></div>
-<div class="step"><span>2</span><div><b>Jawab 10 pernyataan singkat</b><p>Tentang kedekatan, ekspresi, konflik, rasa aman, dan kebutuhanmu. Tidak ada jawaban benar atau salah.</p></div></div>
-<div class="step"><span>3</span><div><b>Terima profilmu, Instant Via WhatsApp</b><p>Lanjut ke laporan yang lebih dalam bila kamu ingin memahami polamu lebih jauh.</p></div></div>
-</div>
-</section>
-
-<section class="band centered faq">
-<h2 class="st">Pertanyaan yang sering muncul</h2>
-<p class="ss">Sebelum kamu mulai.</p>
-<details><summary>Apakah ini diagnosis psikologis?</summary><p>Bukan. Hasil menggambarkan kecenderungan saat ini, bersifat edukatif dan reflektif, dan bukan penentu apakah kamu harus bertahan atau berpisah.</p></details>
-<details><summary>Berapa lama tesnya?</summary><p>Sekitar 4 menit: beberapa pertanyaan pembuka, lalu 10 pernyataan singkat dengan lima pilihan jawaban.</p></details>
-<details><summary>Siapa yang bisa ikut?</summary><p>Pengguna usia 17 tahun ke atas yang sedang menikah atau berada dalam hubungan.</p></details>
-</section>
-
-<section class="fin">
-<h2 class="st">Hasilnya langsung muncul di layar.</h2>
-<p class="ss">Gratis, tanpa daftar akun, dan tidak sampai 5 menit.</p>
-<button class="btn" type="button" onclick="LC.open()">✨ Mulai LOVECode Test</button>
-</section>
-
-<nav class="foot-nav" aria-label="Menu halaman">
-<a href="tentang.html">Tentang</a>
-<a href="privasi.html">Privasi</a>
-<a href="syarat.html">Syarat</a>
-<a href="kontak.html">Kontak</a>
-</nav>
-
-<div class="legal"><strong>Disclaimer:</strong> Lovecode adalah bagian dari lifecode.my.id, platform edukasi refleksi diri. Hasil menggambarkan kecenderungan saat ini, bersifat edukatif dan reflektif, bukan diagnosis psikologis atau medis, dan bukan penentu apakah kamu harus bertahan atau berpisah. Jika mengalami tekanan emosional berat atau krisis, hubungi profesional berlisensi atau layanan kesehatan jiwa 119 ext. 8.<br><br>Halaman ini memakai Facebook Pixel untuk mengukur iklan (lihat <a href="privasi.html">Kebijakan Privasi</a>).</div>
-</div></div>
-
 <script>
 (function(){
 const SCRIPT_URL='https://script.google.com/macros/s/AKfycbxz4nhqVOAdSSM7NKYkpkpqFiSXI-SJvNvXZ65GCYcQnNhp64v7sero_lqHYxPPIU8a/exec';
-const MAX_USE=2,WA_BUSINESS='6281553016909',BOT='🧭';
+const MAX_USE=2,WA_BUSINESS='6281553016909';
 
 const AGREE=['Sangat tidak sesuai','Tidak sesuai','Kadang-kadang','Sesuai','Sangat sesuai'];
 const STEPS=[
@@ -325,7 +408,6 @@ const STEPS=[
 {p:'Rasa Aman',q:'Saya sering butuh tanda atau kepastian bahwa saya masih penting bagi pasangan.'},
 {p:'Kebutuhan Emosional',q:'Agar tetap nyaman dalam hubungan, saya butuh ruang dan waktu pribadi yang cukup.'},
 {p:'Kebutuhan Emosional',q:'Saya merasa paling dicintai ketika pasangan memberi perhatian secara konsisten, bukan sesekali.'}];
-const TOTAL=5+STEPS.length;
 const KEYS=['OPEN','SILENT','REASS','INDEP','PEACE','DIRECT','ACTION','DEEP'];
 const PAT={
 OPEN:['The Open Heart','Si Terbuka','Kamu mudah mengungkapkan perasaan dan membangun kedekatan.','komunikasi dan keterbukaan','bisa frustrasi saat pasangan terlalu tertutup'],
@@ -340,7 +422,7 @@ DEEP:['The Deep Feeler','Perasa yang Mendalam','Kamu sangat peka terhadap peruba
 function track(n){try{if(window.fbq)fbq('trackCustom',n);(window.dataLayer=window.dataLayer||[]).push({event:n})}catch(e){}}
 function lsGet(k){try{return localStorage.getItem(k)}catch(e){return null}}
 function lsSet(k,v){try{localStorage.setItem(k,v)}catch(e){}}
-let approx=false,st='',nama='',tglA='',tglB='',tglS='',started=false,busy=false,sent=false,R=null,USER_REF='DIRECT';
+let approx=false,gen='',st='',nama='',tglA='',tglB='',tglS='',started=false,busy=false,sent=false,R=null,USER_REF='DIRECT';
 const A={q:[]};
 const $=function(id){return document.getElementById(id)};
 const esc=function(t){return t==null?'':String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')};
@@ -350,146 +432,155 @@ function iso(){const n=new Date();return n.getFullYear()+'-'+('0'+(n.getMonth()+
 function days(v){const p=v.split('-'),n=new Date();return Math.floor((Date.UTC(n.getFullYear(),n.getMonth(),n.getDate())-Date.UTC(+p[0],+p[1]-1,+p[2]))/864e5)}
 function span(d){const y=Math.floor(d/365.25),m=Math.floor((d-y*365.25)/30.44);return (y?y+' tahun ':'')+m+' bulan'}
 function ageOk(v){const p=String(v).split('-');if(p.length!==3)return false;const d=new Date(+p[0],+p[1]-1,+p[2]);if(isNaN(d)||+p[0]<1900)return false;const n=new Date();let a=n.getFullYear()-d.getFullYear();const m=n.getMonth()-d.getMonth();if(m<0||(m===0&&n.getDate()<d.getDate()))a--;return a>=17}
+function ageY(v){const p=v.split('-'),d=new Date(+p[0],+p[1]-1,+p[2]),n=new Date();let a=n.getFullYear()-d.getFullYear();const m=n.getMonth()-d.getMonth();if(m<0||(m===0&&n.getDate()<d.getDate()))a--;return a}
 function normWA(v){let d=String(v).replace(/\D/g,'');if(d.indexOf('0')===0)d='62'+d.slice(1);else if(d.indexOf('8')===0)d='62'+d;return d}
-function down(){const b=$('msgs');if(b)b.scrollTop=b.scrollHeight}
-function msg(cls,av,html,bc){const box=$('msgs');if(!box)return;const m=document.createElement('div');m.className='msg '+cls;const a=document.createElement('div');a.className='ma';a.innerHTML=av;const b=document.createElement('div');b.className='bub'+(bc?' '+bc:'');b.innerHTML=html;m.appendChild(a);m.appendChild(b);box.appendChild(m);down()}
-function bot(h,c){msg('bot',BOT,h,c)}
-function user(t){msg('user','❤',esc(t))}
-function typing(ms,cb){hideT();const box=$('msgs');if(!box)return;const m=document.createElement('div');m.className='msg bot';m.id='typ';m.innerHTML='<div class="ma">'+BOT+'</div><div class="bub"><div class="typ"><span></span><span></span><span></span></div></div>';box.appendChild(m);down();setTimeout(function(){hideT();cb()},ms)}
-function hideT(){const t=$('typ');if(t&&t.parentNode)t.parentNode.removeChild(t)}
-function prog(p){const f=$('prog');if(f)f.style.width=Math.min(p,100)+'%'}
-function clr(){const c=$('ci');if(c)c.innerHTML='';return c}
-function sticky(){const s=$('stk'),cs=$('chs'),c=$('start');if(!s||!cs||!c)return;const r=c.getBoundingClientRect();s.classList.toggle('show',!(r.bottom>0&&r.top<window.innerHeight)&&!cs.classList.contains('open'))}
-function open(){const s=$('chs');if(!s)return;s.classList.add('open');s.setAttribute('aria-hidden','false');sticky();
-if(!started){started=true;track('LC_Start');setTimeout(function(){s.scrollIntoView({behavior:'smooth',block:'start'});setTimeout(greet,700)},400)}else{s.scrollIntoView({behavior:'smooth',block:'start'});setTimeout(down,500)}
-const b=$('start');if(b)b.textContent='Lanjutkan Tes'}
-function close(){const s=$('chs');if(!s)return;s.classList.remove('open');s.setAttribute('aria-hidden','true');sticky();const b=$('start');if(b)b.scrollIntoView({behavior:'smooth',block:'center'})}
-
-function greet(){typing(700,function(){
-bot('Halo, Sahabat. 🧭 Saya LIFE, pendamping refleksi digitalmu dari LifeCode.<br><br>Tes ini bukan untuk membaca pikiran pasangan. Ini untuk memahami <strong>pola emosionalmu</strong> saat mencintai, kecewa, dan menghadapi konflik. Ruang ini aman dan tanpa penghakiman.','gr');
-setTimeout(pickStatus,800)})}
-function opts(list,cb,cls){const ci=clr();if(!ci)return;const w=document.createElement('div');w.className=cls||'opts';
-list.forEach(function(l,i){const b=document.createElement('button');b.type='button';b.className='ob';b.innerHTML='<b>'+'ABCDE'[i]+'</b><span>'+esc(l)+'</span>';
-b.onclick=function(){if(busy)return;busy=true;cb(i,l);setTimeout(function(){busy=false},500)};w.appendChild(b)});ci.appendChild(w);return ci}
-function pickStatus(){typing(600,function(){bot('Pertama, bagaimana status hubunganmu saat ini?');
-opts(['Saya sudah menikah','Saya sedang dalam hubungan (pacaran / tunangan)'],function(i,l){st=i?'R':'M';track('LC_Status_'+st);user(l);clr();setTimeout(askName,300)})})}
-function askName(){prog(1/TOTAL*90);typing(600,function(){bot('Izinkan aku mengenalmu. Siapa nama panggilanmu?');textIn('Tulis nama panggilanmu...',function(v){nama=v;user(v);clr();setTimeout(askA,350)})})}
-function dateIn(done){const ci=clr();if(!ci)return;const i=document.createElement('input');i.type='date';i.className='fi';i.max=iso();i.setAttribute('aria-label','Tanggal');const b=document.createElement('button');b.type='button';b.className='btn';b.textContent='Lanjutkan';ci.appendChild(i);ci.appendChild(b);
-b.onclick=function(){if(!i.value||busy)return;busy=true;done(i.value);setTimeout(function(){busy=false},600)}}
 function fd(v){const p=v.split('-');return p[2]+'/'+p[1]+'/'+p[0]}
-function askA(){prog(2/TOTAL*90);typing(700,function(){bot('Boleh tahu tanggal lahirmu, '+nm()+'? Data ini dipakai untuk menghitung perjalanan hidup dan kedewasaan emosionalmu. Akses minimal usia 17 tahun.');
-dateIn(function(v){user(fd(v));clr();
-if(!ageOk(v)){typing(600,function(){bot('Terima kasih, '+nm()+'. Layanan LifeCode saat ini hanya untuk pengguna usia 17 tahun ke atas. 🌿');const c=$('ci');if(c)c.innerHTML='<p class="cn">Sesi ini selesai.</p>'});return}
-tglA=v;const d=days(v);
-typing(900,function(){bot('Hari ini kamu sudah melewati <strong>'+fmt(d)+' hari</strong> kehidupan (sekitar '+span(d)+'). Setiap harinya membentuk ketangguhan yang kamu bawa ke dalam hubungan ini. 🌿');setTimeout(askB,1300)})})})}
-function askB(){prog(3/TOTAL*90);typing(700,function(){bot('Sekarang, tanggal lahir pasanganmu? Agar kita bisa melihat selisih perjalanan hidup kalian berdua.');
-dateIn(function(v){user(fd(v));clr();
-if(!ageOk(v)){typing(600,function(){bot('Hmm, tanggalnya sepertinya belum tepat. Pastikan tanggal lahir pasangan sudah benar ya.');setTimeout(askB,500)});return}
-tglB=v;const a=days(tglA),b=days(v),df=Math.abs(a-b),who=a>b?'Kamu':'Pasanganmu',
-txt=df<1?'Kalian lahir di hari yang sama, kebetulan yang jarang terjadi.':'Selisih usia kalian <strong>'+fmt(df)+' hari</strong> (sekitar '+span(df)+'). '+who+' lebih dulu hadir di dunia ini.';
-typing(900,function(){bot('Pada hari yang sama ini, pasanganmu sudah melewati <strong>'+fmt(b)+' hari</strong> kehidupan. '+txt+'<br><br>Dua perjalanan hidup yang berbeda, lalu dipertemukan. ❤');setTimeout(askS,1400)})})})}
-function askS(){prog(4/TOTAL*90);typing(700,function(){bot('Apakah kamu ingat '+(st==='M'?'tanggal pernikahan':'tanggal jadian atau awal hubungan')+' kalian?');
-opts(['Ya, saya ingat tanggalnya','Tidak ingat, saya isi perkiraan tahunnya'],function(i,l){user(l);clr();setTimeout(i?askSY:askSD,300)})})}
-function askSD(){typing(500,function(){bot('Silakan pilih tanggalnya.');dateIn(function(v){user(fd(v));clr();
-if(v<=tglA){typing(600,function(){bot('Tanggalnya sepertinya lebih awal dari tanggal lahirmu. Coba cek lagi ya.');setTimeout(askSD,500)});return}
-setS(v,false)})})}
-function askSY(){typing(500,function(){bot('Tidak apa-apa, perkiraan saja cukup. Sudah berapa tahun kalian bersama? (boleh desimal, misalnya 2,5)');
-textIn('Contoh: 3 atau 2,5',function(v){const y=parseFloat(v.replace(',','.'));user(v+' tahun');clr();const d=Math.round(y*365.25);
-if(!(y>0&&y<=80)||d>=days(tglA)){typing(500,function(){bot('Angkanya sepertinya belum tepat. Tulis jumlah tahun, misalnya 3 atau 2,5.');setTimeout(askSY,400)});return}
-const n=new Date(Date.now()-d*864e5);setS(n.getFullYear()+'-'+('0'+(n.getMonth()+1)).slice(-2)+'-'+('0'+n.getDate()).slice(-2),true)})})}
-function setS(v,ap){tglS=v;approx=ap;const d=days(v);
-typing(1000,function(){bot('Kalian sudah melewati <strong>'+(ap?'sekitar ':'')+fmt(d)+' hari</strong> bersama ('+(ap?'':'sekitar ')+span(d)+').<br><br>Dalam '+fmt(d)+' hari itu ada tawa dan ada air mata, hari yang ingin dikenang dan hari yang ingin dilupakan. Itu bukan angka biasa. Apa pun hasil tes ini, perjalanan itu nyata dan layak dihargai. 🌿','gr');setTimeout(function(){q(0)},1800)})}
+function down(){const b=$('msgs');if(b)b.scrollTop=b.scrollHeight}
 
-function q(i){if(i>=STEPS.length)return finish();const s=STEPS[i];prog((5+i)/TOTAL*90);
-const intro=i===0?'Sekarang, '+nm()+', ada '+STEPS.length+' pernyataan singkat. Pilih yang paling menggambarkan <em>dirimu yang sebenarnya</em>, bukan dirimu yang ingin terlihat baik.<br><br>':'';
-const mid=i===5?'Separuh jalan, kamu hebat. 🌿<br><br>':'';
-typing(i===0?800:450,function(){bot(intro+mid+'<span class="qn">'+s.p+' · '+(i+1)+' dari '+STEPS.length+'</span>'+esc(s.q));
-opts(AGREE,function(k,l){A.q[i]=k+1;user('ABCDE'[k]+'. '+l);clr();setTimeout(function(){q(i+1)},350)})})}
-function textIn(ph,done){const ci=clr();if(!ci)return;const ta=document.createElement('textarea');ta.className='fi';ta.placeholder=ph;ta.setAttribute('aria-label',ph);const b=document.createElement('button');b.type='button';b.className='btn';b.textContent='Lanjutkan';ci.appendChild(ta);ci.appendChild(b);
-function go(v){if(busy)return;busy=true;done(v);setTimeout(function(){busy=false},600)}
-b.onclick=function(){const v=ta.value.trim();if(v)go(v)};
-ta.onkeydown=function(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();b.click()}};
-if(!window.matchMedia('(pointer:coarse)').matches)setTimeout(function(){ta.focus({preventScroll:true})},350);
-ta.addEventListener('focus',function(){setTimeout(function(){down();ci.scrollIntoView({block:'nearest'})},300)})}
+function sticky(){const s=$('stk'),cs=$('chs');if(!s||!cs)return;s.classList.toggle('show',cs.hidden)}
+function place(){const cs=$('chs');
+ const secs=document.querySelectorAll('.shell section');let sec=null;
+ for(let i=0;i<secs.length;i++){const el=secs[i];if(el===cs)continue;
+  const r=el.getBoundingClientRect();
+  if(r.bottom>1&&r.top<window.innerHeight*.8){sec=el;break}}
+ if(!sec){for(let i=secs.length-1;i>=0;i--){if(secs[i]!==cs){sec=secs[i];break}}}
+ if(sec&&sec.nextElementSibling!==cs)sec.insertAdjacentElement('afterend',cs)}
+let noAuto=false;
+function open(src){const s=$('chs');if(!s)return;
+ if(s.hidden){
+  place();noAuto=true;s.hidden=false;sticky();
+  if(!started){started=true;track('LC_Start');genderStep()}
+  const r=s.getBoundingClientRect(),dy=Math.max(0,r.top);
+  if(dy>2)window.scrollBy({top:dy,behavior:'smooth'});else if(dy>0)window.scrollBy({top:dy})}
+ else{const r=s.getBoundingClientRect();
+  if(r.top>window.innerHeight*.6)window.scrollBy({top:r.top,behavior:'smooth'});
+  else if(r.top<0)window.scrollBy({top:r.top,behavior:'smooth'})}
+ const b=$('stk').querySelector('span');if(b)b.textContent='Lanjutkan Tes'}
+function close(){const s=$('chs');if(!s)return;const ref=s.previousElementSibling;s.hidden=true;sticky();if(ref)ref.scrollIntoView({behavior:'smooth',block:'end'})}
+
+function view(h){const s=$('stage');if(!s)return;s.innerHTML='<div class="fade">'+h+'</div>';
+ if(noAuto){noAuto=false;return}
+ const c=$('chs'),r=c.getBoundingClientRect();if(r.top<0||r.top>window.innerHeight*.6)c.scrollIntoView({behavior:'smooth',block:'start'})}
+const prog=function(p){return '<div class="pb" aria-hidden="true"><i style="width:'+p+'%"></i></div>'};
+function dateInput(id,label){return '<input class="field" type="date" id="'+id+'" max="'+iso()+'" aria-label="'+label+'">'}
+function endAge(who){view('<div class="rt">SESI SELESAI</div><div class="stq s">Terima kasih, '+nm()+'.</div><p class="p2" style="margin:0">'+who+'</p>')}
+
+function genderStep(){view('<div class="rt">LANGKAH AWAL</div><div class="stq">Apa jenis kelaminmu?</div><p class="p2">Dipakai untuk menyusun laporan yang sesuai denganmu.</p><div class="opts" id="op"></div>');
+ const w=$('op');[['Male','Laki-laki'],['Female','Perempuan']].forEach(function(o,i){const b=document.createElement('button');b.type='button';b.className='ob';b.innerHTML='<b>'+'AB'[i]+'</b><span>'+o[1]+'</span>';b.onclick=function(){gen=o[0];track('LC_Gender_'+gen);statusStep()};w.appendChild(b)})}
+function statusStep(){view('<div class="rt">LANGKAH AWAL</div><div class="stq">Bagaimana status hubunganmu saat ini?</div><p class="p2">Tes ini bukan untuk membaca pikiran pasangan. Ini untuk memahami <b>pola emosionalmu</b>. Ruang ini aman dan tanpa penghakiman.</p><div class="opts" id="op"></div><button class="back" id="bk" type="button">Kembali</button>');$('bk').onclick=genderStep;
+ const w=$('op');[['M','Saya sudah menikah'],['R','Saya sedang dalam hubungan (pacaran atau tunangan)']].forEach(function(o){const b=document.createElement('button');b.type='button';b.className='ob';b.innerHTML='<b>'+(o[0]==='M'?'A':'B')+'</b><span>'+o[1]+'</span>';b.onclick=function(){st=o[0];track('LC_Status_'+st);nameStep()};w.appendChild(b)})}
+function nameStep(){view('<div class="rt">KENALAN</div><div class="stq">Siapa nama panggilanmu?</div><p class="p2">Izinkan kami mengenalmu.</p><input class="field" id="nm" placeholder="Contoh: Rina" aria-label="Nama panggilan" maxlength="30" value="'+esc(nama)+'"><button class="btn plain" id="go" type="button">Lanjutkan</button><button class="back" id="bk" type="button">Kembali</button>');
+ const go=function(){const v=$('nm').value.trim();if(!v){$('nm').focus();return}nama=v;birthStep()};
+ $('go').onclick=go;$('nm').onkeydown=function(e){if(e.key==='Enter')go()};$('bk').onclick=statusStep}
+function birthStep(){view('<div class="rt">PERJALANAN HIDUPMU</div><div class="stq">Kapan tanggal lahirmu, <span style="color:var(--green)">'+esc(nama)+'</span>?</div><p class="p2">Dipakai untuk menghitung perjalanan hidupmu. Akses minimal usia 17 tahun.</p>'+dateInput('bd','Tanggal lahir')+'<button class="btn plain" id="go" type="button">Lanjutkan</button><button class="back" id="bk" type="button">Kembali</button>');
+ $('go').onclick=function(){const v=$('bd').value;if(!v){$('bd').focus();return}
+  if(!ageOk(v)){endAge('Layanan LifeCode saat ini hanya untuk pengguna usia 17 tahun ke atas.');return}
+  tglA=v;lifeStep()};$('bk').onclick=nameStep}
+function lifeStep(){const d=days(tglA);view('<div class="rt">PERJALANANMU</div><div class="bless"><b>'+esc(nama)+'</b>, hari ini kamu sudah melewati <b>'+fmt(d)+' hari</b> kehidupan (sekitar '+span(d)+').<br><br>Setiap harinya membentuk ketangguhan yang kamu bawa ke dalam hubungan ini.</div><button class="btn plain" id="go" type="button">Lanjutkan</button>');$('go').onclick=partnerStep}
+function partnerStep(){view('<div class="rt">PASANGANMU</div><div class="stq">Kapan tanggal lahir pasanganmu?</div><p class="p2">Agar kita bisa melihat selisih perjalanan hidup kalian berdua.</p>'+dateInput('bp','Tanggal lahir pasangan')+'<div class="err" id="err" role="alert"></div><button class="btn plain" id="go" type="button">Lanjutkan</button><button class="back" id="bk" type="button">Kembali</button>');
+ $('go').onclick=function(){const v=$('bp').value;if(!v){$('bp').focus();return}
+  if(!ageOk(v)){rerr('Tanggalnya sepertinya belum tepat. Pastikan tanggal lahir pasangan sudah benar.');return}
+  tglB=v;diffStep()};$('bk').onclick=lifeStep}
+function diffStep(){const a=days(tglA),b=days(tglB),df=Math.abs(a-b),ya=ageY(tglA),yb=ageY(tglB),dy=df/365.25,
+ dys=dy<1?'kurang dari 1 tahun':(Math.round(dy*10)/10).toString().replace('.',',')+' tahun',
+ who=a>b?'Kamu lebih tua dari pasanganmu':'Pasanganmu lebih tua darimu',
+ ins=dy<1?'Kalian hampir seumuran. Fase hidup, tekanan, dan prioritas biasanya mirip, jadi lebih mudah saling mengerti.':
+ dy<=3?'Kalian seumuran. Fase hidup kalian cenderung sejalan, jadi pengalaman dan tantangan sehari-hari biasanya mudah dipahami satu sama lain.':
+ dy<=7?'Selisih sedang. Kalian bisa berada di fase hidup yang sedikit berbeda, misalnya soal karier, keuangan, atau rencana ke depan. Itu wajar, asal ekspektasi masing-masing dibicarakan.':
+ 'Selisih cukup besar. Kalian mungkin tumbuh dengan pengalaman dan nilai yang berbeda. Itu bisa saling memperkaya, asal tujuan hidup dan ritme masing-masing dibicarakan terbuka.';
+ view('<div class="rt">DUA PERJALANAN</div><div class="stq s">Usiamu <span style="color:var(--green)">'+ya+' tahun</span>, usia pasanganmu <span style="color:var(--green)">'+yb+' tahun</span>.</div><div class="bless"><b>Selisih usia kalian: '+(df<1?'hari yang sama':dys)+'</b>'+(df<1?'':' ('+fmt(df)+' hari). '+who+'.')+'<br><br>'+ins+'<br><br><small style="color:var(--ink3)">Insight ini gambaran umum, bukan penentu cocok atau tidaknya hubungan. Yang paling berpengaruh tetap cara kalian berkomunikasi.</small></div><button class="btn plain" id="go" type="button">Lanjutkan</button>');$('go').onclick=startStep}
+function startStep(){view('<div class="rt">AWAL HUBUNGAN</div><div class="stq">Apakah kamu ingat '+(st==='M'?'tanggal pernikahan':'tanggal jadian atau awal hubungan')+' kalian?</div><div class="opts" id="op"></div><button class="back" id="bk" type="button">Kembali</button>');
+ const w=$('op');['Ya, saya ingat tanggalnya','Tidak ingat, saya isi perkiraan tahunnya'].forEach(function(t,i){const b=document.createElement('button');b.type='button';b.className='ob';b.innerHTML='<b>'+'AB'[i]+'</b><span>'+t+'</span>';b.onclick=i?startYear:startDate;w.appendChild(b)});$('bk').onclick=diffStep}
+function startDate(){view('<div class="rt">AWAL HUBUNGAN</div><div class="stq">Pilih tanggalnya.</div>'+dateInput('bs','Tanggal awal hubungan')+'<div class="err" id="err" role="alert"></div><button class="btn plain" id="go" type="button">Lanjutkan</button><button class="back" id="bk" type="button">Kembali</button>');
+ $('go').onclick=function(){const v=$('bs').value;if(!v){$('bs').focus();return}
+  if(v<=tglA){rerr('Tanggalnya sepertinya lebih awal dari tanggal lahirmu. Coba cek lagi.');return}
+  setS(v,false)};$('bk').onclick=startStep}
+function startYear(){view('<div class="rt">AWAL HUBUNGAN</div><div class="stq">Sudah berapa tahun kalian bersama?</div><p class="p2">Perkiraan saja cukup. Boleh desimal, misalnya 2,5.</p><input class="field" id="yr" inputmode="decimal" placeholder="Contoh: 3 atau 2,5" aria-label="Lama hubungan dalam tahun"><div class="err" id="err" role="alert"></div><button class="btn plain" id="go" type="button">Lanjutkan</button><button class="back" id="bk" type="button">Kembali</button>');
+ const go=function(){const y=parseFloat($('yr').value.replace(',','.')),d=Math.round(y*365.25);
+  if(!(y>0&&y<=80)||d>=days(tglA)){rerr('Angkanya sepertinya belum tepat. Tulis jumlah tahun, misalnya 3 atau 2,5.');return}
+  const n=new Date(Date.now()-d*864e5);setS(n.getFullYear()+'-'+('0'+(n.getMonth()+1)).slice(-2)+'-'+('0'+n.getDate()).slice(-2),true)};
+ $('go').onclick=go;$('yr').onkeydown=function(e){if(e.key==='Enter')go()};$('bk').onclick=startStep}
+function setS(v,ap){tglS=v;approx=ap;const d=days(v);
+ view('<div class="rt">PERJALANAN KALIAN</div><div class="bless">Kalian sudah melewati <b>'+(ap?'sekitar ':'')+fmt(d)+' hari</b> bersama ('+(ap?'':'sekitar ')+span(d)+').<br><br>Dalam '+fmt(d)+' hari itu ada tawa dan ada air mata, hari yang ingin dikenang dan hari yang ingin dilupakan. Apa pun hasil tes ini, perjalanan itu nyata dan layak dihargai.</div><p class="p2" style="margin:0 0 14px">Sekarang ada '+STEPS.length+' pernyataan singkat. Pilih yang paling menggambarkan <b>dirimu yang sebenarnya</b>, bukan dirimu yang ingin terlihat baik.</p><button class="btn plain" id="go" type="button">Mulai '+STEPS.length+' Pernyataan</button>');$('go').onclick=function(){ask(0)}}
+function rerr(m){const e=$('err');if(!e)return;e.textContent=m||'';e.classList.toggle('on',!!m)}
+
+function ask(i){const N=STEPS.length,p=Math.round(i/N*100),s=STEPS[i];
+ view('<div class="qh"><b>'+(i+1<10?'0':'')+(i+1)+'</b><span>/ '+N+'</span><em>'+p+'%</em></div>'+prog(p)+'<div class="cat">'+s.p+'</div><div class="stq s">'+esc(s.q)+'</div><div class="scale" role="group" aria-label="Skala 1 sampai 5">'+[1,2,3,4,5].map(function(n){return '<button type="button" data-v="'+n+'" aria-label="Skala '+n+'" class="'+(A.q[i]===n?'sel':'')+'">'+n+'</button>'}).join('')+'</div><div class="ends"><span>Sangat tidak sesuai</span><span>Sangat sesuai</span></div>'+(i===0?'<p class="disc">Tidak ada jawaban benar atau salah. Pilih yang paling dekat dengan dirimu belakangan ini.</p>':'')+(i>0?'<button class="back" id="bk" type="button">Kembali</button>':''));
+ document.querySelectorAll('.scale button').forEach(function(b){b.onclick=function(){if(busy)return;busy=true;A.q[i]=+b.dataset.v;b.classList.add('sel');setTimeout(function(){busy=false;i+1<N?ask(i+1):result()},240)}});
+ const bk=$('bk');if(bk)bk.onclick=function(){ask(i-1)}}
 
 function calc(){const a=A.q,v=function(i){return a[i-1]},r=function(i){return 6-a[i-1]};
-const d={clo:v(1)+r(2),exp:r(3)+r(4),con:v(6)+r(5),sec:r(7)+r(8)};
-const p={OPEN:v(1)+r(2)+r(3)+r(4),SILENT:v(5)+v(3)+v(2)+r(6),REASS:v(7)+v(8)+v(10)+r(9),INDEP:v(9)+r(8)+r(7)+v(5),PEACE:v(3)+r(6)+r(5)+r(7),DIRECT:v(6)+r(3)+r(5)+r(4),ACTION:2*v(4)+v(2)+r(1),DEEP:v(7)+v(1)+v(6)+v(10)};
-const ord=KEYS.slice().sort(function(x,y){return p[y]-p[x]||KEYS.indexOf(x)-KEYS.indexOf(y)});
-const sp=v(9)>=4,at=v(10)>=4;
-const need=sp&&at?'Ruang pribadi dan perhatian yang konsisten':sp?'Ruang pribadi untuk bernapas':at?'Perhatian yang konsisten dari pasangan':'Cukup fleksibel, tidak ada kebutuhan yang menonjol';
-return{d:d,pri:ord[0],sec:ord[1],need:need}}
+ const d={clo:v(1)+r(2),exp:r(3)+r(4),con:v(6)+r(5),sec:r(7)+r(8)};
+ const p={OPEN:v(1)+r(2)+r(3)+r(4),SILENT:v(5)+v(3)+v(2)+r(6),REASS:v(7)+v(8)+v(10)+r(9),INDEP:v(9)+r(8)+r(7)+v(5),PEACE:v(3)+r(6)+r(5)+r(7),DIRECT:v(6)+r(3)+r(5)+r(4),ACTION:2*v(4)+v(2)+r(1),DEEP:v(7)+v(1)+v(6)+v(10)};
+ const ord=KEYS.slice().sort(function(x,y){return p[y]-p[x]||KEYS.indexOf(x)-KEYS.indexOf(y)});
+ const sp=v(9)>=4,at=v(10)>=4;
+ const need=sp&&at?'Ruang pribadi dan perhatian yang konsisten':sp?'Ruang pribadi untuk bernapas':at?'Perhatian yang konsisten dari pasangan':'Cukup fleksibel, tidak ada kebutuhan yang menonjol';
+ return{d:d,pri:ord[0],sec:ord[1],need:need}}
 const pc=function(x){return Math.round((x-2)/8*100)};
 
-function finish(){track('LC_Complete');prog(95);R=calc();
-typing(1000,function(){bot('Perjalanan refleksi kita selesai, '+nm()+'. Terima kasih atas kejujuranmu.');
-setTimeout(function(){
-const P=PAT[R.pri],S=PAT[R.sec],dz=days(tglS);
-let h='<div class="sum"><h4>🧭 Profil Emosional '+esc(nama)+'</h4><div class="sub">'+(st==='M'?'Pernikahan':'Hubungan')+' '+fmt(dz)+' hari ('+span(dz)+'). Kecenderungan saat ini, bukan diagnosis.</div>'+
-'<div class="pat"><em>POLA UTAMA</em><b>'+P[0]+'</b><em style="color:var(--ink3);font-weight:500">'+P[1]+'</em></div>'+
-'<div class="si"><strong>Pola kamu</strong>'+P[2]+'<br><br><strong>Kekuatan</strong>'+P[3]+'.<br><strong style="margin-top:6px">Tantangan</strong>'+P[4]+'.</div>'+
-'<div class="si"><strong>Pola pendukung</strong>'+S[0]+' ('+S[1]+')</div><div class="si"><strong>Peta emosional</strong>';
-[['Kedekatan emosional',R.d.clo],['Ekspresi perasaan',R.d.exp],['Keterbukaan saat konflik',R.d.con],['Rasa aman dalam hubungan',R.d.sec]].forEach(function(x){h+='<div class="br"><span><em>'+x[0]+'</em><em>'+pc(x[1])+'</em></span><div class="bar"><i style="width:'+pc(x[1])+'%"></i></div></div>'});
-h+='<small style="color:var(--ink3)">Skor rendah bukan berarti buruk. Ini gaya, bukan nilai.</small></div>'+
-'<div class="si"><strong>Kebutuhan emosional utama</strong>'+R.need+'</div>'+
-'<div class="lock">🔒 Belum tampil di sini: <strong>apa yang mungkin dilihat pasanganmu vs yang sebenarnya terjadi</strong>, serta <strong>"Cara Mencintai Saya"</strong>. Semuanya ada di laporan WhatsApp gratis.</div></div>';
-bot(h,'wide');const c=clr();if(c)c.innerHTML='<p class="cn">Profil selesai. 🌿</p>';setTimeout(offer,1600)},900)})}
-
-function offer(){typing(900,function(){bot('Satu lagi, '+nm()+': <strong>Laporan Profil Emosional LifeCode</strong>, gratis lewat WhatsApp. Isinya: pola utama, yang dilihat pasangan vs yang sebenarnya terjadi, dan cara mencintai versimu.');
-setTimeout(function(){
-const h='<div class="rep" id="rep"><h4>🎁 Laporan Gratis Profil Emosional</h4><p>Isi data berikut, centang persetujuan, lalu kirim. Laporan dikirim ke WhatsApp-mu <strong>setelah kamu mengklik tombol konfirmasi</strong>.</p>'+
-'<div class="rf"><span class="rl">Jenis Kelamin *</span><div class="rr"><label><input type="radio" name="lc-g" value="Male"> Laki-laki</label><label><input type="radio" name="lc-g" value="Female"> Perempuan</label></div></div>'+
-'<div class="rf"><label class="rl" for="wa">Nomor WhatsApp Aktif *</label><input type="tel" id="wa" class="fi" inputmode="tel" placeholder="Contoh: 0812XXXXXXXX"></div>'+
-'<label class="ag" for="agree"><input type="checkbox" id="agree"><span>Ya, saya bersedia menerima laporan gratis lewat WhatsApp, dan setuju nama, gender, tanggal lahir saya dan pasangan, tanggal mulai hubungan, nomor WhatsApp, serta ringkasan jawaban dikirim ke LifeCode untuk menyusun laporan. Saya sudah memberi tahu atau berhak membagikan data pasangan saya. Saya telah membaca <a href="privasi.html" target="_blank" rel="noopener">Kebijakan Privasi</a> dan <a href="syarat.html" target="_blank" rel="noopener">Syarat Penggunaan</a>.</span></label>'+
-'<div class="err" id="err" role="alert"></div><button type="button" class="btn gold snd" id="snd">Simpan Data &amp; Lanjut ke WhatsApp</button>'+
-'<div class="legal" style="margin:14px 0 0;padding:0">Laporan bersifat edukatif dan reflektif, bukan diagnosis.</div></div>';
-bot(h,'wide');prog(98);const c=clr();if(c)c.innerHTML='<p class="cn">Belum siap? Boleh tutup chat ini. Jawabanmu tidak dikirim tanpa persetujuan. 🌿</p>';
-const ag=$('agree'),sd=$('snd');ag.addEventListener('change',function(){sd.classList.toggle('on',ag.checked);if(ag.checked)setTimeout(function(){sd.scrollIntoView({behavior:'smooth',block:'nearest'})},120)});sd.addEventListener('click',submit)},700)})}
-function rerr(m){const e=$('err');if(!e)return;e.textContent=m||'';e.classList.toggle('on',!!m)}
+function tabHtml(t){const P=PAT[R.pri],S=PAT[R.sec];
+ if(t===0)return '<div class="si"><strong class="k">Pola kamu</strong>'+P[2]+'</div><div class="si"><strong class="k">Kekuatan</strong>'+P[3]+'.</div><div class="si"><strong class="k">Tantangan</strong>'+P[4]+'.</div><div class="si"><strong class="k">Pola pendukung</strong>'+S[0]+' ('+S[1]+')</div>';
+ if(t===1){let h='';[['Kedekatan emosional',R.d.clo],['Ekspresi perasaan',R.d.exp],['Keterbukaan saat konflik',R.d.con],['Rasa aman dalam hubungan',R.d.sec]].forEach(function(x){h+='<div class="m4"><div class="l"><span>'+x[0]+'</span><span>'+pc(x[1])+'</span></div><div class="seg lt"><b style="width:'+pc(x[1])+'%"></b></div></div>'});return h+'<p class="disc" style="margin-top:6px">Skor rendah bukan berarti buruk. Ini gaya, bukan nilai.</p>'}
+ return '<div class="si"><strong class="k">Kebutuhan emosional utama</strong>'+R.need+'</div><div class="lock">Belum tampil di sini: <strong>apa yang mungkin dilihat pasanganmu vs yang sebenarnya terjadi</strong>, serta <strong>"Cara Mencintai Saya"</strong>. Semuanya ada di laporan WhatsApp gratis.</div>'}
+function result(){track('LC_Complete');R=calc();const P=PAT[R.pri],dz=days(tglS);
+ view('<div class="rt">PROFIL EMOSIONAL '+esc(nama).toUpperCase()+'</div><div class="pat"><em>POLA UTAMA</em><b>'+P[0]+'</b><span>'+P[1]+'</span></div><p class="disc" style="margin:6px 0 0">'+(st==='M'?'Pernikahan':'Hubungan')+' '+fmt(dz)+' hari ('+span(dz)+'). Kecenderungan saat ini, bukan diagnosis.</p>'+
+ '<div class="tabs" role="tablist">'+['Ringkasan','Peta','Kebutuhan'].map(function(n,i){return '<button type="button" role="tab" aria-selected="'+(i===0)+'" data-t="'+i+'">'+n+'</button>'}).join('')+'</div><div id="tc">'+tabHtml(0)+'</div>'+
+ '<div class="lead-box"><h3>Laporan Gratis Profil Emosional</h3><p>Dikirim ke WhatsApp-mu <strong>setelah kamu mengklik tombol konfirmasi</strong>.</p>'+
+  '<div class="rf"><label class="rl" for="wa">Nomor WhatsApp Aktif *</label><input type="tel" id="wa" class="field" inputmode="tel" placeholder="Contoh: 0812XXXXXXXX"></div>'+
+ '<label class="ag" for="agree"><input type="checkbox" id="agree"><span>Ya, saya bersedia menerima laporan gratis lewat WhatsApp, dan setuju nama, gender, tanggal lahir saya dan pasangan, tanggal mulai hubungan, nomor WhatsApp, serta ringkasan jawaban dikirim ke LifeCode untuk menyusun laporan. Saya sudah memberi tahu atau berhak membagikan data pasangan saya. Saya telah membaca <a href="privasi.html" target="_blank" rel="noopener">Kebijakan Privasi</a> dan <a href="syarat.html" target="_blank" rel="noopener">Syarat Penggunaan</a>.</span></label>'+
+ '<div class="err" id="err" role="alert" style="margin-top:12px"></div><button type="button" class="btn plain" id="snd" style="margin-top:14px">Simpan Data &amp; Lanjut ke WhatsApp</button></div>'+
+ '<p class="disc" style="text-align:center;">Laporan bersifat edukatif dan reflektif, bukan diagnosis.</p>');
+ document.querySelectorAll('.tabs button').forEach(function(b){b.onclick=function(){document.querySelectorAll('.tabs button').forEach(function(x){x.setAttribute('aria-selected',x===b)});$('tc').innerHTML=tabHtml(+b.dataset.t)}});
+ $('snd').addEventListener('click',submit)}
 function survey(){return 'status='+st+' | a='+A.q.join('.')+' | hari_bersama='+days(tglS)+' | tgl_pasangan='+tglB+' | tgl_mulai='+tglS+(approx?' (perkiraan)':'')}
 
 function submit(){
-if(sent)return;
-const sd=$('snd'),ag=$('agree');rerr('');
-const g=document.querySelector('#chs input[name="lc-g"]:checked'),w=normWA($('wa').value);
-if(!g||!$('wa').value.trim()){rerr('Lengkapi jenis kelamin dan nomor WhatsApp-mu.');return}
-if(!/^\d{9,15}$/.test(w)){rerr('Nomor WhatsApp tidak valid. Contoh: 0812XXXXXXXX.');return}
-if(!ag.checked){rerr('Centang persetujuan terlebih dahulu.');return}
-const used=parseInt(lsGet('lc_used')||'0',10);if(used>=MAX_USE){rerr('Limit akses tercapai. Silakan coba lagi esok hari.');return}
-const payload={action:'save_data',nama:nama,tgl_lahir:tglA,gender:g.value,wa:w,hasil_survey:survey(),jawaban_kegagalan:'',jawaban_bisikan:'',jawaban_penyerahan:'',status_hubungan:st,tgl_pasangan:tglB,tgl_mulai:tglS,ref:USER_REF};
-sd.disabled=true;sd.innerHTML='<span class="spin"></span> Menyimpan data...';
-fetch(SCRIPT_URL,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(payload)})
-.then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.text()})
-.then(function(t){let d;try{d=JSON.parse(t)}catch(e){throw new Error('respons server tidak valid')}
-if(d.status==='rate_limited')throw new Error('terlalu sering, tunggu 1 menit');
-if(d.status==='error')throw new Error(d.message||'kesalahan server');
-sent=true;lsSet('lc_used',String(used+1));track('LC_ReportSaved');done(w)})
-.catch(function(e){rerr('Data belum terkirim ('+((e&&e.message)||'koneksi gagal')+'). Periksa internetmu lalu coba lagi.');sd.disabled=false;sd.innerHTML='Simpan Data &amp; Lanjut ke WhatsApp'})}
+ if(sent)return;
+ const sd=$('snd'),ag=$('agree');rerr('');
+ const w=normWA($('wa').value);
+ if(!$('wa').value.trim()){rerr('Lengkapi nomor WhatsApp-mu.');return}
+ if(!/^\d{9,15}$/.test(w)){rerr('Nomor WhatsApp tidak valid. Contoh: 0812XXXXXXXX.');return}
+ if(!ag.checked){rerr('Centang persetujuan terlebih dahulu.');return}
+ const used=parseInt(lsGet('lc_used')||'0',10);if(used>=MAX_USE){rerr('Limit akses tercapai. Silakan coba lagi esok hari.');return}
+ const payload={action:'save_data',nama:nama,tgl_lahir:tglA,gender:gen,wa:w,hasil_survey:survey(),jawaban_kegagalan:'',jawaban_bisikan:'',jawaban_penyerahan:'',status_hubungan:st,tgl_pasangan:tglB,tgl_mulai:tglS,ref:USER_REF};
+ sd.disabled=true;sd.innerHTML='<span class="spin"></span>&nbsp; Menyimpan data...';
+ fetch(SCRIPT_URL,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(payload)})
+ .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.text()})
+ .then(function(t){let d;try{d=JSON.parse(t)}catch(e){throw new Error('respons server tidak valid')}
+  if(d.status==='rate_limited')throw new Error('terlalu sering, tunggu 1 menit');
+  if(d.status==='error')throw new Error(d.message||'kesalahan server');
+  sent=true;lsSet('lc_used',String(used+1));track('LC_ReportSaved');done(w)})
+ .catch(function(e){rerr('Data belum terkirim ('+((e&&e.message)||'koneksi gagal')+'). Periksa internetmu lalu coba lagi.');sd.disabled=false;sd.innerHTML='Simpan Data &amp; Lanjut ke WhatsApp'})}
 
 function done(w){
-const c=$('rep');if(!c)return;prog(100);
-const wl='https://wa.me/'+WA_BUSINESS+'?text='+encodeURIComponent('Halo LifeCode, saya '+nama+' sudah selesai mengisi LOVECode Test. Mohon kirimkan Laporan Gratis Profil Emosional saya.');
-const cl='https://wa.me/'+WA_BUSINESS+'?text='+encodeURIComponent('Halo LifeCode, saya ingin konsultasi 1-on-1 tentang pola emosional hubungan saya');
-c.innerHTML='<div class="done"><div class="dc">✓</div><h4>Data kamu berhasil disimpan</h4><p>Hi <strong>'+esc(nama)+'</strong>, klik tombol di bawah untuk membuka WhatsApp dan meminta kami mengirim laporanmu.</p>'+
-'<a class="btn wa" id="wal" href="'+wl+'" target="_blank" rel="noopener">💬 Buka WhatsApp &amp; Terima Laporan</a>'+
-'<div class="mc"><strong>Penting:</strong> laporan baru dikirim <em>setelah</em> kamu membuka chat WhatsApp ini, sesuai kebijakan privasi Meta.</div>'+
-'<div class="cons"><p><strong>Ingin memahami dari mana polamu bermula dan bagaimana mengubahnya?</strong></p><p style="font-size:13px;color:var(--ink3);margin:0 0 4px">Konsultasi 1-on-1 membantumu membaca polamu lebih dalam.</p><a href="'+cl+'" target="_blank" rel="noopener" id="cl">💬 Konsultasi 1-on-1</a></div></div>';
-down();const ci=clr();if(ci)ci.innerHTML='<p class="cn">Terima kasih, '+esc(nama)+'. Silakan klik tombol WhatsApp di atas. 🌿</p>';
-$('wal').addEventListener('click',function(){track('LC_WhatsAppClick');
-fetch(SCRIPT_URL,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({action:'trigger_send_report',wa:w,nama:nama})}).catch(function(){})});
-$('cl').addEventListener('click',function(){track('LC_ConsultClick')});}
+ const wl='https://wa.me/'+WA_BUSINESS+'?text='+encodeURIComponent('Halo LifeCode, saya '+nama+' sudah selesai mengisi LOVECode Test. Mohon kirimkan Laporan Gratis Profil Emosional saya.');
+ const cl='https://wa.me/'+WA_BUSINESS+'?text='+encodeURIComponent('Halo LifeCode, saya ingin konsultasi 1-on-1 tentang pola emosional hubungan saya');
+ const m=w.slice(0,4)+'****'+w.slice(-2),P=PAT[R.pri],S=PAT[R.sec];
+ view('<div class="done"><div class="dc">&#10003;</div><h4>Data kamu berhasil disimpan</h4><p>Hi <strong>'+esc(nama)+'</strong>, klik tombol di bawah untuk membuka WhatsApp dan meminta kami mengirim laporanmu.</p></div>'+
+ '<div class="dash"><div class="dh">RINGKASAN DATA KAMU</div><div class="r"><span>Nama</span><b>'+esc(nama)+'</b></div><div class="r"><span>WhatsApp</span><b>'+m+'</b></div><div class="r"><span>Pola utama</span><b>'+P[0]+'</b></div><div class="r"><span>Pola pendukung</span><b>'+S[0]+'</b></div></div>'+
+ '<a class="btn wa" id="wal" href="'+wl+'" target="_blank" rel="noopener"><span>Buka WhatsApp dan terima laporan</span><i class="ar">&rarr;</i></a>'+
+ '<div class="mc"><strong>Penting:</strong> laporan baru dikirim <em>setelah</em> kamu membuka chat WhatsApp ini, sesuai kebijakan privasi Meta.</div>'+
+ '<div class="cons"><p><strong>Ingin memahami dari mana polamu bermula dan bagaimana mengubahnya?</strong></p><p style="font-size:13px;color:var(--ink3);margin:0 0 4px">Konsultasi 1-on-1 membantumu membaca polamu lebih dalam.</p><a href="'+cl+'" target="_blank" rel="noopener" id="cl">Konsultasi 1-on-1</a></div>');
+ $('wal').addEventListener('click',function(){track('LC_WhatsAppClick');
+  fetch(SCRIPT_URL,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({action:'trigger_send_report',wa:w,nama:nama})}).catch(function(){})});
+ $('cl').addEventListener('click',function(){track('LC_ConsultClick')})}
 
 function init(){
-$('cx').addEventListener('click',close);
-let tk=false;
-window.addEventListener('scroll',function(){if(!tk){requestAnimationFrame(function(){sticky();tk=false});tk=true}},{passive:true});
-window.addEventListener('resize',sticky);
-document.addEventListener('keydown',function(e){if(e.key==='Escape'&&$('chs').classList.contains('open'))close()});
-const p=new URLSearchParams(location.search);
-if(p.get('reset')==='1')lsSet('lc_used','0');
-const r=p.get('ref')||p.get('affiliate');
-if(r){USER_REF=r.toUpperCase();lsSet('lc_ref',USER_REF)}else{const s=lsGet('lc_ref');if(s)USER_REF=s}
-sticky()}
+ $('cx').addEventListener('click',close);
+ const cn=$('cnt'),chk=document.querySelectorAll('.chk');
+ chk.forEach(function(b){b.addEventListener('click',function(){
+  b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')==='true'?'false':'true');
+  const n=document.querySelectorAll('.chk[aria-pressed="true"]').length;
+  cn.textContent=n===0?'Belum ada yang dipilih.':'Kamu merasakan '+n+' dari '+chk.length+'. Kamu tidak sendirian.'})});
+ let tk=false;
+ window.addEventListener('scroll',function(){if(!tk){requestAnimationFrame(function(){sticky();tk=false});tk=true}},{passive:true});
+ window.addEventListener('resize',sticky);
+ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!$('chs').hidden)close()});
+ const p=new URLSearchParams(location.search);
+ if(p.get('reset')==='1')lsSet('lc_used','0');
+ const r=p.get('ref')||p.get('affiliate');
+ if(r){USER_REF=r.toUpperCase();lsSet('lc_ref',USER_REF)}else{const s=lsGet('lc_ref');if(s)USER_REF=s}
+ sticky()}
 window.LC={open:open,close:close};
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
